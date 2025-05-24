@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import Hero from '@/app/ui/Hero/Hero'
+// import NavBar from '@/app/ui/NavBar/NavBar'
 
 export default function Home() {
 	return (
 		<main className="min-h-screen bg-white text-gray-900 font-sans">
 			{/* Hero Section */}
-			<Hero />
+			{/* <NavBar /> */}
 			{/* About Section */}
 			<section className="py-20 px-6 bg-white">
 				<div className="max-w-4xl mx-auto">
