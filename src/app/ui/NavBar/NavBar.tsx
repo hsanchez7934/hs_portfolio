@@ -18,28 +18,6 @@ const links: {text: string; href: string}[] = [
 	{text: 'Contact', href: '/contact'}
 ]
 
-const renderedLinksLargeView = () => {
-	return links.map((link) => {
-		return (
-			<Link href={link.href} key={link.text} style={{color: '#000', marginLeft: '45px'}}>
-				{link.text}
-			</Link>
-		)
-	})
-}
-
-const renderedMobileLinks = () => {
-	return links.map((link) => {
-		return (
-			<Link href={link.href} key={link.text}>
-				<MenuItem>
-					<Typography textAlign="center">{link.text}</Typography>
-				</MenuItem>
-			</Link>
-		)
-	})
-}
-
 export default function NavBar() {
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -50,9 +28,36 @@ export default function NavBar() {
 		setAnchorEl(null)
 	}
 
+	const renderedLinksLargeView = () => {
+		return links.map((link) => {
+			return (
+				<Link
+					href={link.href}
+					key={link.text}
+					style={{marginLeft: '45px'}}
+					className="dark:text-white text-black"
+				>
+					{link.text}
+				</Link>
+			)
+		})
+	}
+
+	const renderedMobileLinks = () => {
+		return links.map((link) => {
+			return (
+				<Link href={link.href} key={link.text}>
+					<MenuItem>
+						<Typography textAlign="center">{link.text}</Typography>
+					</MenuItem>
+				</Link>
+			)
+		})
+	}
+
 	return (
-		<header className="min-h-20 flex bg-white w-full fixed items-center">
-			<div className="w-full sm:w-1/2 flex items-center pl-6 sm:pl-12">
+		<header className="min-h-20 flex bg-white w-full fixed items-center dark:bg-black">
+			<div className="w-4/5 sm:w-1/2 flex items-center pl-6 sm:pl-12">
 				<Image
 					src="/head_shot.jpg"
 					alt="Headshot of Hector Sanchez"
@@ -60,7 +65,7 @@ export default function NavBar() {
 					height={45}
 					className="rounded-full mr-4"
 				/>
-				<p style={{fontFamily: 'My Font', color: '#000'}} className="text-2xl antialiased">
+				<p style={{fontFamily: 'My Font'}} className="text-2xl antialiased">
 					Hector Sanchez
 				</p>
 			</div>
@@ -69,23 +74,25 @@ export default function NavBar() {
 				<nav>{renderedLinksLargeView()}</nav>
 			</div>
 
-			<Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'flex-end'}} className="sm:hidden">
-				<Tooltip title="Open settings">
-					<IconButton onClick={handleClick} sx={{p: 0}}>
-						<FaBars />
-					</IconButton>
-				</Tooltip>
-				<Menu
-					sx={{mt: '45px'}}
-					id="userSettingMenu"
-					anchorEl={anchorEl}
-					anchorOrigin={{vertical: 'top', horizontal: 'right'}}
-					open={Boolean(anchorEl)}
-					onClose={handleClose}
-				>
-					{renderedMobileLinks()}
-				</Menu>
-			</Box>
+			<div className="flex w-1/5 sm:hidden items-center justify-end pr-6">
+				<Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'flex-end'}}>
+					<Tooltip title="Open settings">
+						<IconButton onClick={handleClick} sx={{p: 0}}>
+							<FaBars className="dark:text-white text-black" />
+						</IconButton>
+					</Tooltip>
+					<Menu
+						sx={{mt: '45px'}}
+						id="userSettingMenu"
+						anchorEl={anchorEl}
+						anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+						open={Boolean(anchorEl)}
+						onClose={handleClose}
+					>
+						{renderedMobileLinks()}
+					</Menu>
+				</Box>
+			</div>
 		</header>
 	)
 }
