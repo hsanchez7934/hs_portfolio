@@ -10,6 +10,8 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import {FaBars} from 'react-icons/fa6'
 import {Typography} from '@mui/material'
+import {usePathname} from 'next/navigation'
+import clsx from 'clsx'
 
 const links: {text: string; href: string}[] = [
 	{text: 'Home', href: '/'},
@@ -19,6 +21,7 @@ const links: {text: string; href: string}[] = [
 ]
 
 export default function NavBar() {
+	const pathName = usePathname()
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -29,13 +32,17 @@ export default function NavBar() {
 	}
 
 	const renderedLinksLargeView = () => {
+		const navLinksClassName = "dark:text-white text-black"
 		return links.map((link) => {
 			return (
 				<Link
 					href={link.href}
 					key={link.text}
 					style={{marginLeft: '45px'}}
-					className="dark:text-white text-black"
+					// className="dark:text-white text-black"
+					className={clsx(navLinksClassName, {
+						'underline text-blue-500 dark:text-blue-500': pathName === link.href
+					})}
 				>
 					{link.text}
 				</Link>
