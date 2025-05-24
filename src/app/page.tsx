@@ -6,7 +6,7 @@ export default function Home() {
 		<main className="min-h-screen bg-white text-gray-900 font-sans">
 			{/* Hero Section */}
 			<section className="py-20 px-6 text-center bg-gray-100">
-				<h1 className="text-4xl font-bold mb-4">Hi, I'm [Your Name]</h1>
+				<h1 className="text-4xl font-bold mb-4">Hi, I am [Your Name]</h1>
 				<p className="text-lg max-w-xl mx-auto mb-6">
 					Senior Front-End Engineer specializing in React, Next.js, and UI/UX development.
 				</p>
@@ -50,7 +50,7 @@ export default function Home() {
 			<section className="py-20 px-6 bg-white text-center">
 				<h2 className="text-2xl font-semibold mb-4">Let’s Work Together</h2>
 				<p className="mb-6 text-gray-600">
-					I'm currently open to new opportunities and freelance projects.
+					I am currently open to new opportunities and freelance projects.
 				</p>
 				<Link
 					href="/contact"
