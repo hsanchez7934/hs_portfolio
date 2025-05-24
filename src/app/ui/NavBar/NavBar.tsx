@@ -1,17 +1,18 @@
 'use client'
 
+import clsx from 'clsx'
 import {useState} from 'react'
+import {usePathname} from 'next/navigation'
+
 import Box from '@mui/material/Box'
+import {FaBars} from 'react-icons/fa6'
 import IconButton from '@mui/material/IconButton'
 import Image from 'next/image'
 import Link from 'next/link'
-import Tooltip from '@mui/material/Tooltip'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import {FaBars} from 'react-icons/fa6'
+import Tooltip from '@mui/material/Tooltip'
 import {Typography} from '@mui/material'
-import {usePathname} from 'next/navigation'
-import clsx from 'clsx'
 
 const links: {text: string; href: string}[] = [
 	{text: 'Home', href: '/'},
@@ -51,9 +52,12 @@ export default function NavBar() {
 	}
 
 	const renderedMobileLinks = () => {
+		const navLinksClassName = "text-black"
 		return links.map((link) => {
 			return (
-				<Link href={link.href} key={link.text}>
+				<Link href={link.href} key={link.text} className={clsx(navLinksClassName, {
+					'underline text-blue-500 dark:text-blue-500': pathName === link.href
+				})}>
 					<MenuItem>
 						<Typography textAlign="center">{link.text}</Typography>
 					</MenuItem>
