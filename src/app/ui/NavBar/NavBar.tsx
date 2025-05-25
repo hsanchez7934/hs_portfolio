@@ -23,6 +23,8 @@ const links: {text: string; href: string}[] = [
 
 export default function NavBar() {
 	const pathName = usePathname()
+	console.log(pathName)
+
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,16 +35,15 @@ export default function NavBar() {
 	}
 
 	const renderedLinksLargeView = () => {
-		const navLinksClassName = "dark:text-white text-black"
+		const navLinksClassName = "dark:text-white"
 		return links.map((link) => {
 			return (
 				<Link
 					href={link.href}
 					key={link.text}
 					style={{marginLeft: '45px'}}
-					// className="dark:text-white text-black"
-					className={clsx(navLinksClassName, {
-						'underline text-blue-500 dark:text-blue-500': pathName === link.href
+					className={clsx(pathName === link.href ? {} : navLinksClassName, {
+						'underline text-blue-400 dark:text-blue-400': pathName === link.href
 					})}
 				>
 					{link.text}
@@ -56,7 +57,7 @@ export default function NavBar() {
 		return links.map((link) => {
 			return (
 				<Link href={link.href} key={link.text} className={clsx(navLinksClassName, {
-					'underline text-blue-500 dark:text-blue-500': pathName === link.href
+					'underline text-blue-400 dark:text-blue-400': pathName === link.href
 				})}>
 					<MenuItem>
 						<Typography textAlign="center">{link.text}</Typography>
