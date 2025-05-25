@@ -1,8 +1,8 @@
 'use client'
 
 import {FaHandPointDown} from 'react-icons/fa6'
-import {textSizesPrimary, textSizesSecondary, btnColors, btnFlexStyles} from '../lib/utils'
-import {technicalSkills} from '../lib/data'
+import {textSizesPrimary, btnColors, btnFlexStyles, textSizesSecondary} from '../lib/utils'
+import {technicalSkills, workHistory} from '../lib/data'
 
 const handleScrollTo = () => {
 	const nextSection = document.getElementById('section-under-hero-technical-skills')
@@ -16,7 +16,7 @@ const renderedSkillsMobile = technicalSkills.map(
 		return (
 			<li
 				key={index}
-				className="text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3 sm:text-center"
+				className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3 sm:text-center"
 				aria-label="Technical skill"
 			>
 				<span
@@ -30,6 +30,17 @@ const renderedSkillsMobile = technicalSkills.map(
 		)
 	}
 )
+
+const renderedWorkHistory = workHistory.map((item: string, index: number) => {
+	return (
+		<li
+			key={index}
+			className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3"
+		>
+			{item}
+		</li>
+	)
+})
 
 export default function About() {
 	return (
@@ -94,7 +105,35 @@ export default function About() {
 				id="about-me-professional-experience"
 				aria-label="Professional experience section"
 			>
-				<h2 className={textSizesPrimary}>Professional Experience</h2>
+				<h2 id="work-history-title" className={textSizesPrimary}>
+					Professional Experience
+				</h2>
+				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500">
+					Software Engineer
+				</p>
+				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500">
+					OpenText Core Insight - Sept 10 2018 - May 5 2025
+				</p>
+				<ul className='list-disc w-60 mr-auto ml-auto sm:w-4/5'>{renderedWorkHistory}</ul>
+			</section>
+
+			<section
+				className="py-20 px-6 bg-white dark:bg-gray-800"
+				id="about-me-professional-experience"
+				aria-label="Professional experience section"
+			>
+				<h2 id="work-history-title" className={textSizesPrimary}>
+					Education
+				</h2>
+				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500">
+					Turing School of Software & Design
+				</p>
+				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500">
+					Front End Engineering Certificate - 2017 - 2018
+				</p>
+				<p className={textSizesSecondary}>
+					Immersive training in JavaScript, responsive web design, client side architecture, and modern front end development techniques.
+				</p>
 			</section>
 		</main>
 	)

@@ -26,7 +26,6 @@ export const workHistory = [
 	'Led the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, and TypeScript.',
 	'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
 	'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
-	'Reduced initial page load time by 40% through implementation of lazy loading, code splitting, and Lighthouse audits.',
 	'Decreased UI bug count by 35% via test automation and structured QA handoffs.',
 	'Introduced and standardized use of a component based system to accelerate team velocity and maintain consistency.',
 	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
