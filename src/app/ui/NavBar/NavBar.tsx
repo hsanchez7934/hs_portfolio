@@ -23,8 +23,6 @@ const links: {text: string; href: string}[] = [
 
 export default function NavBar() {
 	const pathName = usePathname()
-	console.log(pathName)
-
 	const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
 	const handleClick = (event: React.MouseEvent<HTMLElement>) => {
