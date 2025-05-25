@@ -8,7 +8,7 @@ const getYear = () => {
 
 export default function Footer() {
 	return (
-		<footer className="p-10 min-h-36 bg-white w-full flex flex-col items-center justify-center dark:bg-black">
+		<footer className="p-10 min-h-36 md:h-96 bg-gray-200 w-full flex flex-col items-center justify-center dark:bg-black">
 			<div
 				id="footer-social-section"
 				aria-label="Footer social media links section"

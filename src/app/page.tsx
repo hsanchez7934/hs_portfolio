@@ -1,6 +1,7 @@
 'use client'
 
 import {FaHandPointDown, FaFaceSmile, FaHammer, FaHandshake} from 'react-icons/fa6'
+import {textSizesPrimary, textSizesSecondary, btnFlexStyles, btnColors} from './lib/utils'
 import React from 'react'
 import Link from 'next/link'
 
@@ -11,13 +12,8 @@ const handleScrollTo = () => {
 	}
 }
 
-const textSizesPrimary = 'text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 dark:text-gray-200 text-center'
-const textSizesSecondary =
-	'text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-thin text-gray-700 dark:text-white text-center'
 const btnSizes = 'rounded-full h-auto w-36 sm:w-38 md:w-40 lg:w-42 xl:w-48 2xl:w-52 p-2 lg:p-3 xl:p-4 2xl:p-5'
-const btnColors = 'bg-slate-600 hover:bg-gray-700 text-white flex items-center justify-center'
 const btnTextSizes = 'text-base sm:text-lg xl:text-1xl 2xl:text-2xl'
-const btnFlexStyles = 'flex items-center justify-center'
 
 export default function Home() {
 	return (
