@@ -29,6 +29,7 @@ export default function Projects() {
 				<div className="max-w-4xl mx-auto mb-12">
 					{projects.map((project) => {
 						const {title, description, images, links, techStack, projectUrl} = project
+                        console.log(links, techStack, projectUrl)
 						return (
 							<div key={title} id={title} className="w-full bg-black p-8">
 								<h2
