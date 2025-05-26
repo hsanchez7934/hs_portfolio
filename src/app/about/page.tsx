@@ -112,7 +112,7 @@ export default function About() {
 					Software Engineer
 				</p>
 				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500">
-					OpenText Core Insight - Sept 10 2018 - May 5 2025
+					OpenText Core Insight - 2018 - 2025
 				</p>
 				<ul className='list-disc w-60 mr-auto ml-auto sm:w-4/5'>{renderedWorkHistory}</ul>
 			</section>

@@ -1,5 +1,5 @@
 // @ts-expect-error generic
-export const technicalSkills: {label: string; value: string;}[] = [
+export const technicalSkills: {label: string; value: string}[] = [
 	{
 		label: 'Languages',
 		value: 'JavaScript (ES6+), TypeScript, HTML5, CSS3'
@@ -30,4 +30,50 @@ export const workHistory = [
 	'Introduced and standardized use of a component based system to accelerate team velocity and maintain consistency.',
 	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
 	'Wrote clean, maintinable code following industry best practices and internal standards.'
+]
+
+export const projects = [
+	{
+		title: 'Cocktail Explorer',
+		projectUrl: 'https://hs-ck-2fb0336fc8da.herokuapp.com/',
+		description: [
+			{
+				text: 'Access a vast and curated collection of cocktail recipes, ranging from timeless classics to contemporary creations. Cocktail Explorer boasts a comprehensive database, ensuring users have an extensive array of choices to suit every palate and occasion.',
+				label: 'Extensive recipe library'
+			},
+			{
+				text: `Navigate through the diverse repertoire of cocktails effortlessly with intuitive search options. Whether you're in the mood for a refreshing summer cocktail or a warming winter concoction, finding the perfect recipe is a breeze.`,
+				label: 'Intuitive search functionality'
+			},
+			{
+				text: `Each cocktail recipe is accompanied by clear and concise step-by-step instructions, ensuring even the novice mixologist can craft a perfect drink. Visual aids such as images and videos provide additional guidance for an immersive learning experience.`,
+				label: 'Step by step instructions and visual aids'
+			},
+			{
+				text: 'Enjoy the Cocktail Explorer experience on the go with our mobile-responsive design. Access your favorite recipes and cocktail inspiration anytime, anywhere, from the convenience of your smartphone or tablet.',
+				label: 'Mobile responsiveness'
+			}
+		],
+		techStack: [
+			'TypeScript',
+			'JavaScript',
+			'React.js',
+			'Redux Toolkit',
+			'React Router',
+			'HTML5',
+			'CSS3',
+			'Node.js/Express.js'
+		],
+		links: [
+			{
+				text: 'Database powered by the Cocktail DB',
+				url: 'https://www.thecocktaildb.com/'
+			},
+			{
+				text: 'Hosted on Heroku',
+				url: 'https://heroku.com'
+			}
+		],
+		images: ['/ck_img_1.png', '/ck_img_2.png', '/ck_img_3.png', '/ck_img_4.png', '/ck_img_5.png']
+	}
 ]
