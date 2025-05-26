@@ -36,9 +36,9 @@ export default function ImageCarousal(props: Props) {
 
 	return (
 		<div className="w-full h-full relative bg-black p-6">
-			<Image src={`${currentDisplayedImage}`} width={500} height={500} className="" alt="img" />
+			<Image src={`${currentDisplayedImage}`} width={500} height={500} className="h-full w-full object-cover object-center" alt="img" />
 			<div className="w-full absolute h-14 left-0 flex" style={{top: '40%'}}>
-				<div className="flex items-center w-1/2 pl-3">
+				<div className="flex items-center w-1/2">
 					<button
 						id="img-carousal-button-left"
 						type="button"
@@ -50,7 +50,7 @@ export default function ImageCarousal(props: Props) {
 						<FaHandPointLeft />
 					</button>
 				</div>
-				<div className="flex items-center justify-end w-1/2 pr-3">
+				<div className="flex items-center justify-end w-1/2">
 					<button
 						id="img-carousal-button-right"
 						type="button"
