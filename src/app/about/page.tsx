@@ -62,12 +62,8 @@ export default function About() {
 					aria-label="About me subtitle of the website"
 					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
 				>
-					Senior Front End Engineer with 7 years of experience delivering high-performant, scalable,
-					and user focused web applications. Specialized in JavaScript, TypeScript, React.js,
-					Next.js, for modern UI development. Proven ability to own front end architecture, lead
-					cross functional collaborations, and implement design systems. Passionate about clean
-					code, accessibility, and building intuitive user experiences that solve real business
-					problems.
+					Senior web developer specialized in front end engineering with 7 years of experience
+					delivering high-performant, scalable, and user focused web applications.
 				</p>
 				<button
 					id="aboutme-scroll-down-button"
@@ -86,6 +82,16 @@ export default function About() {
 				className="py-20 px-6 bg-white dark:bg-gray-900"
 				aria-label="Section under hero, technical skills"
 			>
+				<p
+					id="about-me-hero-subtitle"
+					aria-label="About me subtitle of the website"
+					className="mb-12 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin text-black dark:text-white text-center p-6"
+				>
+					Specialized in JavaScript, TypeScript, React.js, Next.js, for modern UI development.
+					Proven ability to own front end architecture, lead cross functional collaborations, and
+					implement design systems. Passionate about clean code, accessibility, and building
+					intuitive user experiences that solve real business problems.
+				</p>
 				<div className="max-w-4xl mx-auto mb-12">
 					<h2
 						className={`${textSizesPrimary}`}
@@ -108,13 +114,19 @@ export default function About() {
 				<h2 id="work-history-title" className={textSizesPrimary}>
 					Professional Experience
 				</h2>
-				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500">
+				<p
+					id="opentext-work-history-title"
+					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500"
+				>
 					Software Engineer
 				</p>
-				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500">
+				<p
+					id="opentext-work-history-title"
+					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500"
+				>
 					OpenText Core Insight - 2018 - 2025
 				</p>
-				<ul className='list-disc w-60 mr-auto ml-auto sm:w-4/5'>{renderedWorkHistory}</ul>
+				<ul className="list-disc w-60 mr-auto ml-auto sm:w-4/5">{renderedWorkHistory}</ul>
 			</section>
 
 			<section
@@ -125,14 +137,21 @@ export default function About() {
 				<h2 id="work-history-title" className={textSizesPrimary}>
 					Education
 				</h2>
-				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500">
+				<p
+					id="opentext-work-history-title"
+					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500"
+				>
 					Turing School of Software & Design
 				</p>
-				<p id="opentext-work-history-title" className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500">
+				<p
+					id="opentext-work-history-title"
+					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500"
+				>
 					Front End Engineering Certificate - 2017 - 2018
 				</p>
 				<p className={textSizesSecondary}>
-					Immersive training in JavaScript, responsive web design, client side architecture, and modern front end development techniques.
+					Immersive training in JavaScript, responsive web design, client side architecture, and
+					modern front end development techniques.
 				</p>
 			</section>
 		</main>

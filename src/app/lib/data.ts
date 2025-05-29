@@ -27,7 +27,7 @@ export const workHistory = [
 	'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
 	'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
 	'Decreased UI bug count by 35% via test automation and structured QA handoffs.',
-	'Introduced and standardized use of a component based system to accelerate team velocity and maintain consistency.',
+	'Implemented and standardized use of a component based system to accelerate team velocity and maintain consistency.',
 	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
 	'Wrote clean, maintinable code following industry best practices and internal standards.'
 ]
@@ -74,6 +74,7 @@ export const projects = [
 				url: 'https://heroku.com'
 			}
 		],
-		images: ['/ck_img_1.png', '/ck_img_2.png', '/ck_img_3.png', '/ck_img_4.png', '/ck_img_5.png']
+		images: ['/ck_img_1.png', '/ck_img_2.png', '/ck_img_3.png', '/ck_img_4.png', '/ck_img_5.png'],
+		mainProjectImg: '/ck_img_5.png'
 	}
 ]

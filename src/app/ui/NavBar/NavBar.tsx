@@ -41,7 +41,7 @@ export default function NavBar() {
 					key={link.text}
 					style={{marginLeft: '45px'}}
 					className={clsx(pathName === link.href ? {} : navLinksClassName, {
-						'underline text-blue-400 dark:text-blue-400': pathName === link.href
+						'underline text-cyan-400 dark:text-cyan-400': pathName === link.href
 					})}
 				>
 					{link.text}
