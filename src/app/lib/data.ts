@@ -78,3 +78,9 @@ export const projects = [
 		mainProjectImg: '/ck_img_5.png'
 	}
 ]
+
+export const contactData = [
+	{label: 'Gmail', text: 'hsanchez7934@gmail.com'},
+	{label: 'LinkedIn', text: 'https://www.linkedin.com/in/hector-a-sanchez/'},
+	{label: 'Telephone', text: '(720) 999 -7262'}
+]
