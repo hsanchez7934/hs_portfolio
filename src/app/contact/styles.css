@@ -1,0 +1,10 @@
+.visibleSubmitBtnIcon {
+	visibility: visible;
+}
+
+.hiddenSubmitBtnIcon {
+	visibility: hidden;
+	height: 0px;
+	width: 0px;
+	overflow: hidden;
+}

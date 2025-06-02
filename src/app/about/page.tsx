@@ -60,7 +60,7 @@ export default function About() {
 				<p
 					id="about-me-hero-subtitle"
 					aria-label="About me subtitle of the website"
-					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
+					className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white"
 				>
 					Senior web developer specialized in front end engineering with 7 years of experience
 					delivering high-performant, scalable, and user focused web applications.
@@ -85,7 +85,7 @@ export default function About() {
 				<p
 					id="about-me-hero-subtitle"
 					aria-label="About me subtitle of the website"
-					className="mb-12 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin text-black dark:text-white text-center p-6"
+					className="max-w-screen-xl ml-auto mr-auto mb-12 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin text-black dark:text-white text-center p-6"
 				>
 					Specialized in JavaScript, TypeScript, React.js, Next.js, for modern UI development.
 					Proven ability to own front end architecture, lead cross functional collaborations, and
@@ -126,7 +126,7 @@ export default function About() {
 				>
 					OpenText Core Insight - 2018 - 2025
 				</p>
-				<ul className="list-disc w-60 mr-auto ml-auto sm:w-4/5">{renderedWorkHistory}</ul>
+				<ul className="max-w-screen-xl ml-auto mr-auto list-disc w-60 sm:w-4/5">{renderedWorkHistory}</ul>
 			</section>
 
 			<section
