@@ -70,7 +70,7 @@ export default function NavBar() {
 	}
 
 	return (
-		<header className="min-h-20 flex bg-white w-full fixed items-center dark:bg-black">
+		<header className="min-h-20 flex bg-white w-full fixed items-center dark:bg-black" style={{zIndex: 1000}}>
 			<div className="w-4/5 sm:w-1/2 flex items-center pl-6 sm:pl-12">
 				<Link href={'/'}>
 					<Image
