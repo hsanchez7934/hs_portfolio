@@ -33,7 +33,7 @@ export default function NavBar() {
 	}
 
 	const renderedLinksLargeView = () => {
-		const navLinksClassName = "dark:text-white"
+		const navLinksClassName = 'dark:text-white'
 		return links.map((link) => {
 			return (
 				<Link
@@ -51,13 +51,17 @@ export default function NavBar() {
 	}
 
 	const renderedMobileLinks = () => {
-		const navLinksClassName = "text-black"
+		const navLinksClassName = 'text-black'
 		return links.map((link) => {
 			return (
-				<Link href={link.href} key={link.text} className={clsx(navLinksClassName, {
-					'underline text-blue-400 dark:text-blue-400': pathName === link.href
-				})}>
-					<MenuItem>
+				<Link
+					href={link.href}
+					key={link.text}
+					className={clsx(navLinksClassName, {
+						'underline text-blue-400 dark:text-blue-400': pathName === link.href
+					})}
+				>
+					<MenuItem onClick={handleClose}>
 						<Typography textAlign="center">{link.text}</Typography>
 					</MenuItem>
 				</Link>
@@ -68,16 +72,20 @@ export default function NavBar() {
 	return (
 		<header className="min-h-20 flex bg-white w-full fixed items-center dark:bg-black">
 			<div className="w-4/5 sm:w-1/2 flex items-center pl-6 sm:pl-12">
-				<Image
-					src="/head_shot.jpg"
-					alt="Headshot of Hector Sanchez"
-					width={45}
-					height={45}
-					className="rounded-full mr-4"
-				/>
-				<p style={{fontFamily: 'My Font'}} className="text-2xl antialiased">
-					Hector Sanchez
-				</p>
+				<Link href={'/'}>
+					<Image
+						src="/head_shot.jpg"
+						alt="Headshot of Hector Sanchez"
+						width={45}
+						height={45}
+						className="rounded-full mr-4"
+					/>
+				</Link>
+				<Link href={'/'}>
+					<p style={{fontFamily: 'My Font'}} className="text-2xl antialiased">
+						Hector Sanchez
+					</p>
+				</Link>
 			</div>
 
 			<div className="hidden sm:w-1/2 sm:flex items-center justify-end pr-12">
