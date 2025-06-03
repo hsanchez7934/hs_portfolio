@@ -58,7 +58,7 @@ export default function NavBar() {
 					href={link.href}
 					key={link.text}
 					className={clsx(navLinksClassName, {
-						'underline text-blue-400 dark:text-blue-400': pathName === link.href
+						'underline text-cyan-400 dark:text-cyan-400': pathName === link.href
 					})}
 				>
 					<MenuItem onClick={handleClose}>
