@@ -7,7 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle'
 import {FiSend} from 'react-icons/fi'
 import {btnColors, btnFlexStyles} from '../lib/utils'
 import {FaAsterisk} from 'react-icons/fa'
-import emailjs from '@emailjs/browser'
+import emailjs, {EmailJSResponseStatus} from '@emailjs/browser'
 import {z} from 'zod'
 import {SiGmail} from 'react-icons/si'
 import {FaLinkedin} from 'react-icons/fa6'
@@ -20,7 +20,7 @@ import LoadingSpinner from '../ui/LoadingSpinner/LoadingSpinner'
 const btnSizes =
 	'rounded-full h-auto w-36 sm:w-38 md:w-40 lg:w-42 xl:w-48 2xl:w-52 p-2 lg:p-3 xl:p-4 2xl:p-5'
 const btnTextSizes = 'text-base sm:text-lg xl:text-1xl 2xl:text-2xl'
-const formLabelStyles = "block mb-2 text-gray-500 text-base sm:text-lg xl:text-1xl 2xl:text-2xl"
+const formLabelStyles = 'block mb-2 text-gray-500 text-base sm:text-lg xl:text-1xl 2xl:text-2xl'
 
 export type State = {
 	errors?: {
@@ -56,10 +56,15 @@ export default function Contact() {
 	const [toggleDialog, setToggleDialog] = useState(false)
 	const [dialogText, setDialogText] = useState('')
 	const [dialogTextColor, setDialogTextColor] = useState('')
-	const airplaneIconRef = useRef(null as any)
-	const loadingSpinnerRef = useRef(null as any)
 
-	const toggleSubmitBtnIconState = (toggleIcons: boolean, airplaneIcon: React.RefObject<any>, loadingSpinner: React.RefObject<any>) => {
+	const loadingSpinnerRef = useRef(null)
+	const airplaneIconRef = useRef(null)
+
+	const toggleSubmitBtnIconState = (
+		toggleIcons: boolean,
+		airplaneIcon: React.RefObject<Element>,
+		loadingSpinner: React.RefObject<Element>
+	) => {
 		if (toggleIcons) {
 			// @ts-expect-error generic
 			airplaneIcon.classList.remove('visibleSubmitBtnIcon')
@@ -132,7 +137,7 @@ export default function Contact() {
 					process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
 					templateParams
 				)
-				.then((response: any) => {
+				.then((response: EmailJSResponseStatus) => {
 					console.log(response.status, response.text)
 					if (airplaneIcon && loadingSpinner) {
 						toggleSubmitBtnIconState(false, airplaneIcon, loadingSpinner)
@@ -214,7 +219,7 @@ export default function Contact() {
 					</ul>
 				</div>
 
-				<div className='pb-8 max-w-screen-xl ml-auto mr-auto'>
+				<div className="pb-8 max-w-screen-xl ml-auto mr-auto">
 					<h1 className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-black dark:text-white text-center">
 						Send me a message:
 					</h1>
@@ -260,11 +265,7 @@ export default function Contact() {
 
 							<div className="p-8">
 								<div className="flex">
-									<label
-										htmlFor="message"
-										className={formLabelStyles}
-										aria-required="true"
-									>
+									<label htmlFor="message" className={formLabelStyles} aria-required="true">
 										Message:
 									</label>
 									<FaAsterisk className="text-red-500 text-xs ml-2" />
@@ -295,8 +296,8 @@ export default function Contact() {
 									className={`${btnColors} ${btnFlexStyles} ${btnTextSizes} ${btnSizes}`}
 								>
 									Submit
-										<LoadingSpinner ref={loadingSpinnerRef} classes={'hiddenSubmitBtnIcon'} />
-										<FiSend className="visibleSubmitBtnIcon" ref={airplaneIconRef} />
+									<LoadingSpinner ref={loadingSpinnerRef} classes={'hiddenSubmitBtnIcon'} />
+									<FiSend className="visibleSubmitBtnIcon" ref={airplaneIconRef} />
 								</button>
 							</div>
 						</form>
