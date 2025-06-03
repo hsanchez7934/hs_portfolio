@@ -190,6 +190,23 @@ export default function Contact() {
 		return <></>
 	}
 
+	const renderedSubmnitBtnIcons = () => {
+		return (
+			<>
+				<LoadingSpinner
+				// @ts-expect-error generic
+					ref={loadingSpinnerRef}
+					classes={'hiddenSubmitBtnIcon'}
+				/>
+				<FiSend
+					className="visibleSubmitBtnIcon"
+					// @ts-expect-error generic
+					ref={airplaneIconRef}
+				/>
+			</>
+		)
+	}
+
 	return (
 		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
 			<section
@@ -296,8 +313,7 @@ export default function Contact() {
 									className={`${btnColors} ${btnFlexStyles} ${btnTextSizes} ${btnSizes}`}
 								>
 									Submit
-									<LoadingSpinner ref={loadingSpinnerRef} classes={'hiddenSubmitBtnIcon'} />
-									<FiSend className="visibleSubmitBtnIcon" ref={airplaneIconRef} />
+									{renderedSubmnitBtnIcons()}
 								</button>
 							</div>
 						</form>
