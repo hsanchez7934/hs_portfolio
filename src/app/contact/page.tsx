@@ -208,7 +208,7 @@ export default function Contact() {
 	}
 
 	return (
-		<main className="max-h-screen bg-white text-gray-900 font-sans pt-20">
+		<main className="h-auto bg-white text-gray-900 font-sans pt-20">
 			<section
 				id="contact-page-hero-section"
 				aria-label="Contact details container"
@@ -216,18 +216,18 @@ export default function Contact() {
 			>
 				<div className="flex flex-col p-8 max-w-screen-xl ml-auto mr-auto">
 					<h1 className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-10 text-black dark:text-white text-center">
-						Reach out to me directly:
+						Reach out to me directly
 					</h1>
-					<ul className="bg-gray-900 rounded-xl p-6">
+					<ul className="bg-gray-900 rounded-xl p-6 lg:flex">
 						{contactData.map(({label, text}, index) => {
 							return (
 								<li
 									key={index}
-									className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-white mb-3 sm:text-center"
+									className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-white mb-3 sm:text-center lg:w-1/3"
 									aria-label={`Contact details, list items, ${text}`}
 								>
 									<span className="flex items-center justify-center">
-										{getIcon(label)} <span className="text-gray-500 font-semibold">{label}: </span>
+										{getIcon(label)} <span className="text-gray-500 font-semibold">{label} </span>
 									</span>
 									<span className="block text-center">{text}</span>
 								</li>
