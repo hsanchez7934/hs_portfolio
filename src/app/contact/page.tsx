@@ -5,7 +5,6 @@ import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
 
 import {FaHandPointDown} from 'react-icons/fa6'
-import {textSizesPrimary, textSizesSecondary} from '../lib/utils'
 import {FiSend} from 'react-icons/fi'
 import {btnColors, btnFlexStyles} from '../lib/utils'
 import {FaAsterisk} from 'react-icons/fa'
