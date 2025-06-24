@@ -4,6 +4,8 @@ import './styles.css'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
 
+import {FaHandPointDown} from 'react-icons/fa6'
+import {textSizesPrimary, textSizesSecondary} from '../lib/utils'
 import {FiSend} from 'react-icons/fi'
 import {btnColors, btnFlexStyles} from '../lib/utils'
 import {FaAsterisk} from 'react-icons/fa'
@@ -39,10 +41,15 @@ const getIcon = (key: string) => {
 			return <FaLinkedin className="mr-2" />
 		case 'Telephone':
 			return <BsFillTelephoneFill className="mr-2" />
-			break
-
 		default:
 			break
+	}
+}
+
+const handleScrollTo = () => {
+	const nextSection = document.getElementById('contact-page-contact-details')
+	if (nextSection) {
+		nextSection.scrollIntoView({behavior: 'smooth'})
 	}
 }
 
@@ -211,10 +218,41 @@ export default function Contact() {
 		<main className="h-auto bg-white text-gray-900 font-sans pt-20">
 			<section
 				id="contact-page-hero-section"
-				aria-label="Contact details container"
-				className={`bg-gray-100 dark:bg-gray-800 h-auto`}
+				aria-label="Hero section of the contact page"
+				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/contact_hero_img.jpg)] bg-center bg-cover bg-no-repeat`}
 			>
-				<div className="flex flex-col p-8 max-w-screen-xl ml-auto mr-auto">
+				<h1
+					id="contact-page-hero-title"
+					aria-label="Title of the website"
+					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
+				>
+					Contact
+				</h1>
+				<p
+					id="contact-page-hero-subtitle"
+					aria-label="Subtitle of the website"
+					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
+				>
+					{`Let's be friends.`}
+				</p>
+				<button
+					id="contact-page-scroll-down-button"
+					type="button"
+					aria-label="Scroll down to next section"
+					aria-pressed={undefined}
+					onClick={handleScrollTo}
+					className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles}`}
+				>
+					<FaHandPointDown />
+				</button>
+			</section>
+
+			<section
+				id="contact-page-contact-details"
+				aria-label="Contact details container"
+				className={`bg-gray-100 dark:bg-gray-800 h-auto pt-11 pb-11`}
+			>
+				<div className="flex flex-col p-8 max-w-screen-xl ml-auto mr-auto mb-10">
 					<h1 className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-10 text-black dark:text-white text-center">
 						Reach out to me directly
 					</h1>

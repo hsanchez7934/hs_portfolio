@@ -38,6 +38,11 @@ export const projects = [
 		projectUrl: 'https://hs-ck-2fb0336fc8da.herokuapp.com/',
 		description: [
 			{
+				label: 'Project Overview',
+				text: 'Introducing Cocktail Explorer, a sophisticated web application designed for cocktail enthusiasts and mixology aficionados alike. This elegantly crafted platform serves as your virtual guide through the world of mixology, offering an immersive and user-friendly experience for discovering, creating, and sharing exquisite cocktail recipes.'
+			},
+
+			{
 				text: 'Access a vast and curated collection of cocktail recipes, ranging from timeless classics to contemporary creations. Cocktail Explorer boasts a comprehensive database, ensuring users have an extensive array of choices to suit every palate and occasion.',
 				label: 'Extensive recipe library'
 			},
@@ -65,17 +70,54 @@ export const projects = [
 			'Node.js/Express.js'
 		],
 		links: [
-			{
-				text: 'Database powered by the Cocktail DB',
-				url: 'https://www.thecocktaildb.com/'
-			},
+			{text: 'GitHub repo', url: 'https://github.com/hsanchez7934/hs_ck_db'},
 			{
 				text: 'Hosted on Heroku',
 				url: 'https://heroku.com'
+			},
+			{
+				text: 'Database powered by the Cocktail DB',
+				url: 'https://www.thecocktaildb.com/'
 			}
 		],
 		images: ['/ck_img_1.png', '/ck_img_2.png', '/ck_img_3.png', '/ck_img_4.png', '/ck_img_5.png'],
 		mainProjectImg: '/ck_img_5.png'
+	},
+	{
+		title: 'UI Components Library',
+		projectUrl: 'https://ui-components-delta.vercel.app/',
+		description: [
+			{
+				label: 'Project Overview',
+				text: 'Developed a modular and reusable UI component library using React, Next.js, and TailwindCSS, designed to streamline development and enhance user interface consistency across web applications. The library includes a suite of flexible components such as Buttons, Text Inputs, Badges, and more—each built with customization and accessibility at its core. This project reflects strong front-end engineering fundamentals, including component-driven development, design system thinking, and performance-conscious UI construction.'
+			},
+			{
+				label: 'Customization',
+				text: 'Enabled component-level customization through robust prop interfaces and Tailwind-based styling overrides for maximum design flexibility.'
+			},
+			{
+				label: 'Accessability',
+				text: 'Prioritized accessibility best practices using semantic HTML and ARIA attributes, ensuring inclusive user experiences.'
+			},
+			{
+				label: 'Optimization',
+				text: 'Optimized for fast rendering and performance, with a focus on clean component architecture and reusability.'
+			},
+			{
+				label: 'UI/UX',
+				text: 'Emphasized UI consistency and scalability, supporting rich, modern aesthetics suitable for enterprise-level or consumer-facing applications.'
+			}
+		],
+		techStack: ['TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS'],
+		links: [
+			{text: 'GitHub repo', url: 'https://github.com/hsanchez7934/ui-components'},
+			{
+				text: 'Hosted on Vercel',
+				url: 'https://vercel.com'
+			}
+		],
+		images: ['/ui_components_proj_img1.png'],
+		mainProjectImg: '/ui_components_proj_img2.png'
 	}
 ]
 

@@ -1,6 +1,8 @@
 'use client'
 
-import {textSizesPrimary, textSizesSecondary} from '../lib/utils'
+import {FaHandPointDown} from 'react-icons/fa6'
+import {btnColors, btnFlexStyles} from '../lib/utils'
+// import {textSizesPrimary, textSizesSecondary} from '../lib/utils'
 import {projects} from '../lib/data'
 import Image from 'next/image'
 import ImageCarousal from '../ui/ImageCarousal/ImageCarousal'
@@ -13,6 +15,8 @@ import {SiReactrouter} from 'react-icons/si'
 import {SiHtml5} from 'react-icons/si'
 import {SiCsswizardry} from 'react-icons/si'
 import {FaNode} from 'react-icons/fa'
+import {RiTailwindCssFill} from 'react-icons/ri'
+import {PiDotFill} from 'react-icons/pi'
 
 const getIcon = (key: string) => {
 	const styles = {}
@@ -21,48 +25,49 @@ const getIcon = (key: string) => {
 	switch (key) {
 		case 'TypeScript':
 			return <SiTypescript style={styles} className={`${classes}`} />
-			break
 		case 'JavaScript':
 			return <RiJavascriptFill style={styles} className={`${classes}`} />
-			break
 		case 'React.js':
 			return <FaReact style={styles} className={`${classes}`} />
-			break
 		case 'Redux Toolkit':
 			return <SiRedux style={styles} className={`${classes}`} />
-			break
 		case 'React Router':
 			return <SiReactrouter style={styles} className={`${classes}`} />
-			break
 		case 'HTML5':
 			return <SiHtml5 style={styles} className={`${classes}`} />
-			break
 		case 'CSS3':
 			return <SiCsswizardry style={styles} className={`${classes}`} />
-			break
 		case 'Node.js/Express.js':
 			return <FaNode style={styles} className={`${classes}`} />
-			break
+		case 'Tailwind CSS':
+			return <RiTailwindCssFill style={styles} className={`${classes}`} />
 		default:
-			break
+			return <PiDotFill style={styles} className={`${classes}`} />
+	}
+}
+
+const handleScrollTo = () => {
+	const nextSection = document.querySelector('.projectSection_0')
+	if (nextSection) {
+		nextSection.scrollIntoView({behavior: 'smooth'})
 	}
 }
 
 export default function Projects() {
 	const renderedProjectCards = () => {
 		return projects.map((project, index) => {
-			const sectionColor =
-				index % 0 === 2 ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white dark:bg-gray-900'
+			// const sectionColor =
+			// 	index % 0 === 2 ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white dark:bg-gray-900'
 			const {title, description, images, links, techStack, projectUrl, mainProjectImg} = project
 
 			return (
 				<section
 					key={title}
 					id={`project-section-${title}-${index}`}
-					className={`py-20 px-6 ${sectionColor}`}
+					className={`px-6 py-8 projectSection_${index}`}
 					aria-label="Project details main section container"
 				>
-					<div className="max-w-7xl mx-auto mb-12 bg-black rounded-xl">
+					<div className="max-w-7xl mx-auto bg-black rounded-xl">
 						<div key={title} id={title} className="w-full p-8">
 							<h2
 								className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-gray-300 text-center"
@@ -218,22 +223,42 @@ export default function Projects() {
 	return (
 		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
 			<section
-				id="hero-section"
-				aria-label="Title container of projects page"
-				className="bg-gray-100 dark:bg-gray-800 flex flex-col items-center justify-center p-8"
+				id="projects-page-hero-section"
+				aria-label="Hero Section of the website"
+				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/projects_hero.jpg)] bg-center bg-cover bg-no-repeat`}
 			>
-				<h1 id="hero-title" aria-label="Title of projects page" className={textSizesPrimary}>
+				<h1
+					id="projects-page-hero-title"
+					aria-label="Title of the website"
+					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
+				>
 					Projects
 				</h1>
 				<p
-					id="hero-subtitle"
-					aria-label="Subtitle of the projects page"
-					className={textSizesSecondary}
+					id="projects-page-hero-subtitle"
+					aria-label="Subtitle of the website"
+					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
 				>
-					Welcome to my portfolio
+					A collection of projects that I have built leveraging my skills as a Front End Engineer.
 				</p>
+				<button
+					id="projects-page-scroll-down-button"
+					type="button"
+					aria-label="Scroll down to next section"
+					aria-pressed={undefined}
+					onClick={handleScrollTo}
+					className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles}`}
+				>
+					<FaHandPointDown />
+				</button>
 			</section>
-			{renderedProjectCards()}
+			<section
+				id="projects-page-projects-list-section"
+				className="h-auto py-11 bg-gray-100 dark:bg-gray-800"
+				aria-label="Projects list section"
+			>
+				{renderedProjectCards()}
+			</section>
 		</main>
 	)
 }
