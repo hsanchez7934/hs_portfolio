@@ -36,31 +36,45 @@ export default function ImageCarousal(props: Props) {
 
 	return (
 		<div className="w-full h-full relative bg-black p-6 lg:hidden">
-			<Image src={`${currentDisplayedImage}`} width={500} height={500} className="h-full w-full object-cover object-center" alt="img" />
+			<Image
+				src={`${currentDisplayedImage}`}
+				width={500}
+				height={500}
+				className="h-full w-full object-cover object-center"
+				alt="img"
+			/>
 			<div className="w-full absolute h-14 left-0 flex" style={{top: '40%'}}>
 				<div className="flex items-center w-1/2">
-					<button
-						id="img-carousal-button-left"
-						type="button"
-						aria-label="See previous project image"
-						aria-pressed={undefined}
-						onClick={() => handleBtnLeft()}
-						className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles} opacity-70`}
-					>
-						<FaHandPointLeft />
-					</button>
+					{images.length > 1 ? (
+						<button
+							id="img-carousal-button-left"
+							type="button"
+							aria-label="See previous project image"
+							aria-pressed={undefined}
+							onClick={() => handleBtnLeft()}
+							className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles} opacity-70`}
+						>
+							<FaHandPointLeft />
+						</button>
+					) : (
+						<></>
+					)}
 				</div>
 				<div className="flex items-center justify-end w-1/2">
-					<button
-						id="img-carousal-button-right"
-						type="button"
-						aria-label="See next project image"
-						aria-pressed={undefined}
-						onClick={() => handleBtnRight()}
-						className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles} opacity-70`}
-					>
-						<FaHandPointRight />
-					</button>
+					{images.length > 1 ? (
+						<button
+							id="img-carousal-button-right"
+							type="button"
+							aria-label="See next project image"
+							aria-pressed={undefined}
+							onClick={() => handleBtnRight()}
+							className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles} opacity-70`}
+						>
+							<FaHandPointRight />
+						</button>
+					) : (
+						<></>
+					)}
 				</div>
 			</div>
 		</div>
