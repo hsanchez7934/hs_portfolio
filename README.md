@@ -1,5 +1,5 @@
 # Personal Website
-[Click here to navigate to my personal website](https:www.hectors.dev/)
+[Click here to navigate to my personal website](https://www.hectors.dev/)
 
 Project portfolio, work history, education history, and contact information.
 
