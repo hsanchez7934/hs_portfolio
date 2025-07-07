@@ -39,7 +39,7 @@ export default function Home() {
 					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
 				>
 					Senior Front End Engineer specializing in designing, building, and deploying modern
-					websites & web applications.
+					websites & web applications - and recently expanded into mobile development using React Native and Expo.
 				</p>
 				<button
 					id="home-page-scroll-down-button"

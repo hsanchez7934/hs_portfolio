@@ -5,8 +5,13 @@ export const technicalSkills: {label: string; value: string}[] = [
 		value: 'JavaScript (ES6+), TypeScript, HTML5, CSS3'
 	},
 	{
+		label: 'Mobile Development',
+		value:
+			'React Native, Expo, React Navigation, iOS/Android Simulator, Firebase Authentication, Firebase Storage, Firebase Firestore, EAS Build, Push Notifications'
+	},
+	{
 		label: 'Frameworks/Libraries',
-		value: 'React, Next.js, Redux, jQuery'
+		value: 'React, Next.js, Redux, jQuery, Reat Hook Form, Yup'
 	},
 	{
 		label: 'Styling & UI',
