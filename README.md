@@ -1,4 +1,4 @@
-# Welcome to Cocktail Explorer
+# UI Components Library
 [Click here to navigate to UI Components Library](https://ui-components-delta.vercel.app/)
 
 Developed a modular and reusable UI component library using React, Next.js, and TailwindCSS, designed to streamline development and enhance user interface consistency across web applications. The library includes a suite of flexible components such as Buttons, Text Inputs, Badges, and more—each built with customization and accessibility at its core. This project reflects strong front-end engineering fundamentals, including component-driven development, design system thinking, and performance-conscious UI construction.
