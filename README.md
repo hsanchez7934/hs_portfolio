@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Welcome to Cocktail Explorer
+[Click here to navigate to UI Components Library](https://ui-components-delta.vercel.app/)
 
-## Getting Started
+Developed a modular and reusable UI component library using React, Next.js, and TailwindCSS, designed to streamline development and enhance user interface consistency across web applications. The library includes a suite of flexible components such as Buttons, Text Inputs, Badges, and more—each built with customization and accessibility at its core. This project reflects strong front-end engineering fundamentals, including component-driven development, design system thinking, and performance-conscious UI construction.
 
-First, run the development server:
+### Key Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Customization:** Enabled component-level customization through robust prop interfaces and Tailwind-based styling overrides for maximum design flexibility.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Accessability:** Prioritized accessibility best practices using semantic HTML and ARIA attributes, ensuring inclusive user experiences.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Optimization:** Optimized for fast rendering and performance, with a focus on clean component architecture and reusability.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **UI/UX:** Emphasized UI consistency and scalability, supporting rich, modern aesthetics suitable for enterprise-level or consumer-facing applications.
 
-## Learn More
+### Built using the following tech stack:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Typescript
+- JavaScript
+- React.js
+- Next.js
+- HTML5
+- CSS3
+- Hosted on Vercel
