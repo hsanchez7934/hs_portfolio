@@ -34,7 +34,7 @@ export const workHistory = [
 	'Decreased UI bug count by 35% via test automation and structured QA handoffs.',
 	'Implemented and standardized use of a component based system to accelerate team velocity and maintain consistency.',
 	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
-	'Wrote clean, maintinable code following industry best practices and internal standards.'
+	'Wrote clean, maintainable code following industry best practices and internal standards.'
 ]
 
 export const projects = [
