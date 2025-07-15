@@ -217,22 +217,19 @@ export default function Contact() {
 		<main className="h-auto bg-white text-gray-900 font-sans pt-20">
 			<section
 				id="contact-page-hero-section"
-				aria-label="Hero section of the contact page"
 				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/contact_hero_img.jpg)] bg-center bg-cover bg-no-repeat`}
 			>
 				<h1
 					id="contact-page-hero-title"
-					aria-label="Title of the website"
 					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
 				>
 					Contact
 				</h1>
 				<p
 					id="contact-page-hero-subtitle"
-					aria-label="Subtitle of the website"
 					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
 				>
-					{`Let's connect.`}
+					{`Let's connect`}
 				</p>
 				<button
 					id="contact-page-scroll-down-button"
@@ -248,7 +245,6 @@ export default function Contact() {
 
 			<section
 				id="contact-page-contact-details"
-				aria-label="Contact details container"
 				className={`bg-gray-100 dark:bg-gray-800 h-auto pt-11 pb-11`}
 			>
 				<div className="flex flex-col p-8 max-w-screen-xl ml-auto mr-auto mb-10">
@@ -261,7 +257,6 @@ export default function Contact() {
 								<li
 									key={index}
 									className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-white mb-3 sm:text-center lg:w-1/3"
-									aria-label={`Contact details, list items, ${text}`}
 								>
 									<span className="flex items-center justify-center">
 										{getIcon(label)} <span className="text-gray-500 font-semibold">{label} </span>

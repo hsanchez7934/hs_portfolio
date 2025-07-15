@@ -65,14 +65,12 @@ export default function Projects() {
 					key={title}
 					id={`project-section-${title}-${index}`}
 					className={`px-6 py-8 projectSection_${index}`}
-					aria-label="Project details main section container"
 				>
 					<div className="max-w-7xl mx-auto bg-black rounded-xl">
 						<div key={title} id={title} className="w-full p-8">
 							<h2
 								className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-gray-300 text-center"
 								id="technical-skills-title"
-								aria-label={`${title}, project title`}
 							>
 								{title}
 							</h2>
@@ -106,7 +104,6 @@ export default function Projects() {
 							<div className="hidden lg:block h-auto w-full">
 								<h3
 									className="text-white text-center"
-									aria-label="Technologies used to build project, title"
 								>
 									Built using the following technologies:
 								</h3>
@@ -165,7 +162,6 @@ export default function Projects() {
 											>
 												<span
 													className="font-semibold text-gray-500 sm:block"
-													aria-label="Technical skill label"
 												>
 													{label}:{' '}
 												</span>
@@ -180,7 +176,6 @@ export default function Projects() {
 								<h2
 									className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-gray-300 text-center"
 									id="technical-skills-title"
-									aria-label="Technology stack used to build project, title"
 								>
 									Tech Stack
 								</h2>
@@ -190,7 +185,6 @@ export default function Projects() {
 											<li
 												key={index}
 												className="p-2 text-lg h-auto w-auto text-white flex items-center justify-center"
-												aria-label={`Built using, ${stack}`}
 											>
 												{getIcon(stack)}
 												<span>{stack}</span>
@@ -224,22 +218,19 @@ export default function Projects() {
 		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
 			<section
 				id="projects-page-hero-section"
-				aria-label="Hero Section of the website"
 				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/projects_hero.jpg)] bg-center bg-cover bg-no-repeat`}
 			>
 				<h1
 					id="projects-page-hero-title"
-					aria-label="Title of the website"
 					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
 				>
 					Projects
 				</h1>
 				<p
 					id="projects-page-hero-subtitle"
-					aria-label="Subtitle of the website"
 					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
 				>
-					A collection of projects that I have built leveraging my skills as a Front End Engineer.
+					A collection of projects that I have built leveraging my skills as a front end developer
 				</p>
 				<button
 					id="projects-page-scroll-down-button"

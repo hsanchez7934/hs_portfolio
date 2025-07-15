@@ -7,11 +7,11 @@ export const technicalSkills: {label: string; value: string}[] = [
 	{
 		label: 'Mobile Development',
 		value:
-			'React Native, Expo, React Navigation, iOS/Android Simulator, Firebase Authentication, Firebase Storage, Firebase Firestore, EAS Build, Push Notifications'
+			'React Native, Expo, iOS/Android Simulator, Firebase Authentication, Firebase Storage, Firebase Firestore, EAS Build, Push Notifications'
 	},
 	{
 		label: 'Frameworks/Libraries',
-		value: 'React, Next.js, Redux, jQuery, Reat Hook Form, Yup'
+		value: 'React, Next.js, Redux, jQuery'
 	},
 	{
 		label: 'Styling & UI',
@@ -24,11 +24,11 @@ export const technicalSkills: {label: string; value: string}[] = [
 	{label: 'Tools', value: 'Figma, Postman, Chrome Dev Tools, VS Code'},
 	{label: 'Performance', value: 'Lighthouse, Lazy Loading, Code Splitting, Web Vitals'},
 	{label: 'Accessibility', value: 'Semantic HTML, ARIA, WCAG Guidelines'},
-	{label: 'Other', value: 'Rest APIs, GraphQL, Agile/Scrum'}
+	{label: 'Other', value: 'Rest APIs, GraphQL, Agile/Scrum, Jira'}
 ]
 
 export const workHistory = [
-	'Led the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, and TypeScript.',
+	'Managed the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, TypeScript, and React.',
 	'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
 	'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
 	'Decreased UI bug count by 35% via test automation and structured QA handoffs.',

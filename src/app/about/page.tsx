@@ -17,11 +17,9 @@ const renderedSkillsMobile = technicalSkills.map(
 			<li
 				key={index}
 				className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3 sm:text-center"
-				aria-label="Technical skill"
 			>
 				<span
 					className="font-semibold dark:text-gray-500 sm:block"
-					aria-label="Technical skill label"
 				>
 					{label}:{' '}
 				</span>
@@ -47,24 +45,21 @@ export default function About() {
 		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
 			<section
 				id="about-me-hero-section"
-				aria-label="Hero Section of the about me page"
 				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/about-hero.jpg)] bg-center bg-cover bg-no-repeat`}
 			>
 				<h1
 					id="about-me-hero-title"
-					aria-label="About me title of the website"
 					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
 				>
 					Professional Summary
 				</h1>
 				<p
 					id="about-me-hero-subtitle"
-					aria-label="About me subtitle of the website"
 					className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white"
 				>
-					Senior Front End Engineer with 7 years of experience
+					Front End Software Developer with 7 years of experience
 					delivering high-performant, scalable, and user focused web applications. Proficient in cross platform mobile application development
-					using React Native and Expo.
+					using React Native and Expo
 				</p>
 				<button
 					id="aboutme-scroll-down-button"
@@ -81,23 +76,19 @@ export default function About() {
 			<section
 				id="section-under-hero-technical-skills"
 				className="py-20 px-6 bg-white dark:bg-gray-900"
-				aria-label="Section under hero, technical skills"
 			>
 				<p
 					id="about-me-hero-subtitle"
-					aria-label="About me subtitle of the website"
 					className="max-w-screen-xl ml-auto mr-auto mb-12 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin text-black dark:text-white text-center p-6"
 				>
 					Specialized in JavaScript, TypeScript, React.js, Next.js, for modern UI development. Experienced in cross platform mobile application development
-					using React Native and Expo. Proven ability to own front end architecture, lead cross functional collaborations, and
-					implement design systems. Passionate about clean code, accessibility, and building
+					using React Native and Expo. Passionate about clean code, accessibility, and building
 					intuitive user experiences that solve real business problems.
 				</p>
 				<div className="max-w-4xl mx-auto mb-12">
 					<h2
 						className={`${textSizesPrimary}`}
 						id="technical-skills-title"
-						aria-label="Technical skills title"
 					>
 						Technical Skills
 					</h2>
@@ -110,7 +101,6 @@ export default function About() {
 			<section
 				className="py-20 px-6 bg-gray-100 dark:bg-gray-950"
 				id="about-me-professional-experience"
-				aria-label="Professional experience section"
 			>
 				<h2 id="work-history-title" className={textSizesPrimary}>
 					Professional Experience
@@ -133,7 +123,6 @@ export default function About() {
 			<section
 				className="py-20 px-6 bg-white dark:bg-gray-800"
 				id="about-me-professional-experience"
-				aria-label="Professional experience section"
 			>
 				<h2 id="work-history-title" className={textSizesPrimary}>
 					Education
