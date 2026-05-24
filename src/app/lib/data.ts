@@ -24,10 +24,21 @@ export const technicalSkills: {label: string; value: string}[] = [
 	{label: 'Tools', value: 'Figma, Postman, Chrome Dev Tools, VS Code'},
 	{label: 'Performance', value: 'Lighthouse, Lazy Loading, Code Splitting, Web Vitals'},
 	{label: 'Accessibility', value: 'Semantic HTML, ARIA, WCAG Guidelines'},
-	{label: 'Other', value: 'Rest APIs, GraphQL, Agile/Scrum, Jira'}
+	{label: 'Other', value: 'Rest APIs, GraphQL, Agile/Scrum, Jira, AWS Amplify, AWS Cognito'}
 ]
 
-export const workHistory = [
+export type WorkHistory = {
+	title: string
+	company: string
+	date: string
+	responsibilities: string[]
+}
+
+export const workHistory: WorkHistory[] = [{
+	title: 'Front End Engineer',
+	company: 'OpenText Core Insight',
+	date: '2018 - 2025',
+	responsibilities: [
 	'Managed the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, TypeScript, and React.',
 	'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
 	'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
@@ -36,6 +47,24 @@ export const workHistory = [
 	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
 	'Wrote clean, maintainable code following industry best practices and internal standards.'
 ]
+}, {
+	title: 'Senior Front End Engineer',
+	company: 'Microstar Logistics',
+	date: '2025 - Present',
+	responsibilities: [
+		'Managing, building, and improving the user interfaces for several mission-critical applications.',
+		'Applying modern front-end best practices in React and Redux, ensuring maintainability, performance, and seamless usability.',
+		'Designed and implemented a mobile-first Progressive Web App (Next.js + Redux Toolkit) used by field operators to report structured operational data in real time.',
+		'Designed scalable application architecture with long-term maintainability in mind (feature-based folder structure, reusable component library, state persistence).',
+		'Collaborated closely with backend engineers to define API contracts, versioning strategies, and region-aware endpoints.',
+		'Led technical direction for baseline tooling: Redux setup, persistence layer, linting, code formatting, CI alignment.',
+		'Authored structured Jira epics and QA matrices to ensure high-quality delivery across distributed stakeholders.',
+		'Conducted peer mentorship on React best practices, state normalization, and performance optimization.',
+		'Built and maintained full-stack CRUD workflows supporting booking lifecycle management and operational data capture.',
+		'Enabled real-time operational visibility for mission-critical logistics workflows.',
+		'Improved development velocity through standardized tooling and code quality enforcement.'
+	]
+}]
 
 export const projects = [
 	{

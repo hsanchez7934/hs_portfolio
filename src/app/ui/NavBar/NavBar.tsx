@@ -1,6 +1,7 @@
 'use client'
 
 import clsx from 'clsx'
+import {motion} from 'framer-motion'
 import {useState} from 'react'
 import {usePathname} from 'next/navigation'
 
@@ -33,15 +34,16 @@ export default function NavBar() {
 	}
 
 	const renderedLinksLargeView = () => {
-		const navLinksClassName = 'dark:text-white'
+		const navLinksClassName =
+			'rounded-full px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-white'
 		return links.map((link) => {
 			return (
 				<Link
 					href={link.href}
 					key={link.text}
-					style={{marginLeft: '45px'}}
 					className={clsx(pathName === link.href ? {} : navLinksClassName, {
-						'underline text-cyan-400 dark:text-cyan-400': pathName === link.href
+						'rounded-full bg-cyan-50 px-4 py-2 text-sm font-semibold text-cyan-700 dark:bg-cyan-400/10 dark:text-cyan-300':
+							pathName === link.href
 					})}
 				>
 					{link.text}
@@ -51,7 +53,7 @@ export default function NavBar() {
 	}
 
 	const renderedMobileLinks = () => {
-		const navLinksClassName = 'text-black'
+		const navLinksClassName = 'text-slate-950'
 		return links.map((link) => {
 			return (
 				<Link
@@ -70,11 +72,16 @@ export default function NavBar() {
 	}
 
 	return (
-		<header className="min-h-20 flex bg-white w-full fixed items-center dark:bg-black" style={{zIndex: 1000}}>
-			<div className="w-4/5 sm:w-1/2 flex items-center pl-6 sm:pl-12">
+		<motion.header
+			className="fixed z-[1000] flex min-h-20 w-full items-center border-b border-slate-200/70 bg-white/85 shadow-sm shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/85"
+			initial={{y: -24, opacity: 0}}
+			animate={{y: 0, opacity: 1}}
+			transition={{duration: 0.45, ease: 'easeOut'}}
+		>
+			<div className="flex w-4/5 items-center pl-6 sm:w-1/2 sm:pl-12">
 				<Link href={'/'}>
 					<Image
-						src="/head_shot.jpg"
+						src="/IMG_0566.jpeg"
 						alt="Headshot of Hector Sanchez"
 						width={45}
 						height={45}
@@ -82,19 +89,19 @@ export default function NavBar() {
 					/>
 				</Link>
 				<Link href={'/'}>
-					<p style={{fontFamily: 'My Font'}} className="text-2xl antialiased">
+					<p style={{fontFamily: 'My Font'}} className="text-2xl text-slate-950 antialiased dark:text-white">
 						Hector Sanchez
 					</p>
 				</Link>
 			</div>
 
-			<div className="hidden sm:w-1/2 sm:flex items-center justify-end pr-12">
-				<nav>{renderedLinksLargeView()}</nav>
+			<div className="hidden items-center justify-end pr-12 sm:flex sm:w-1/2">
+				<nav className="flex items-center gap-2">{renderedLinksLargeView()}</nav>
 			</div>
 
-			<div className="flex w-1/5 sm:hidden items-center justify-end pr-6">
+			<div className="flex w-1/5 items-center justify-end pr-6 sm:hidden">
 				<Box sx={{flexGrow: 1, display: 'flex', justifyContent: 'flex-end'}}>
-					<Tooltip title="Open settings">
+					<Tooltip title="Open navigation">
 						<IconButton onClick={handleClick} sx={{p: 0}}>
 							<FaBars className="dark:text-white text-black" />
 						</IconButton>
@@ -111,6 +118,6 @@ export default function NavBar() {
 					</Menu>
 				</Box>
 			</div>
-		</header>
+		</motion.header>
 	)
 }

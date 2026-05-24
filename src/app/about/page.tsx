@@ -1,8 +1,18 @@
 'use client'
 
 import {FaHandPointDown} from 'react-icons/fa6'
-import {textSizesPrimary, btnColors, btnFlexStyles, textSizesSecondary} from '../lib/utils'
-import {technicalSkills, workHistory} from '../lib/data'
+import {
+	badgeStyles,
+	cardStyles,
+	sectionInnerStyles,
+	sectionStyles,
+	textSizesPrimary,
+	textSizesSecondary
+} from '../lib/utils'
+import {technicalSkills, WorkHistory, workHistory} from '../lib/data'
+import IconButton from '../ui/Button/IconButton'
+import PageHero from '../ui/Hero/PageHero'
+import Reveal from '../ui/motion/Reveal'
 
 const handleScrollTo = () => {
 	const nextSection = document.getElementById('section-under-hero-technical-skills')
@@ -11,138 +21,151 @@ const handleScrollTo = () => {
 	}
 }
 
+const firstFrontEndJobStartDate = new Date(2018, 8, 10)
+
+const getYearsOfExperience = (startDate: Date) => {
+	const today = new Date()
+	let yearsOfExperience = today.getFullYear() - startDate.getFullYear()
+	const hasNotReachedAnniversary =
+		today.getMonth() < startDate.getMonth() ||
+		(today.getMonth() === startDate.getMonth() && today.getDate() < startDate.getDate())
+
+	if (hasNotReachedAnniversary) {
+		yearsOfExperience -= 1
+	}
+
+	return yearsOfExperience
+}
+
 const renderedSkillsMobile = technicalSkills.map(
 	({label, value}: {label: string; value: string}, index: number) => {
 		return (
 			<li
 				key={index}
-				className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3 sm:text-center"
+				className={`${badgeStyles} flex-col items-start text-left sm:items-center sm:text-center`}
 			>
-				<span
-					className="font-semibold dark:text-gray-500 sm:block"
-				>
-					{label}:{' '}
-				</span>
+				<span className="font-semibold text-slate-950 dark:text-white">{label}</span>
 				{value}
 			</li>
 		)
 	}
 )
 
-const renderedWorkHistory = workHistory.map((item: string, index: number) => {
+const renderedWorkHistory = workHistory.map((item: WorkHistory) => {
+	const renderedResponsibilities = item.responsibilities.map(
+		(responsibility: string, index: number) => {
+			return (
+				<li
+					key={index}
+					className="text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg"
+				>
+					{responsibility}
+				</li>
+			)
+		}
+	)
 	return (
-		<li
-			key={index}
-			className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-black dark:text-white mb-3"
-		>
-			{item}
-		</li>
+		<Reveal key={item.title + item.company + item.date} className={`${cardStyles} mb-8`}>
+			<p
+				id={item.title + item.company + item.date + '-work-history-title'}
+				className="text-center text-xl font-semibold text-slate-950 dark:text-white"
+			>
+				{item.title}
+			</p>
+			<p
+				id={item.title + item.company + item.date + '-work-history-date'}
+				className="mb-6 text-center text-base font-semibold text-cyan-700 dark:text-cyan-300"
+			>
+				{item.company} - {item.date}
+			</p>
+			<ul className="mx-auto max-w-4xl list-disc space-y-3 pl-6">
+				{renderedResponsibilities}
+			</ul>
+		</Reveal>
 	)
 })
 
 export default function About() {
+	const yearsOfExperience = getYearsOfExperience(firstFrontEndJobStartDate)
+	const summary = `Hello, I am Hector Sanchez — a Senior Front-End Engineer who enjoys building products that people genuinely enjoy using.
+	With ${yearsOfExperience}+ years of experience, I focus on creating intuitive, accessible, and scalable experiences while writing clean,
+	maintainable code. I am passionate about turning complex ideas into thoughtful solutions that solve real-world problems.`
 	return (
-		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
-			<section
+		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20 dark:bg-slate-950">
+			<PageHero
 				id="about-me-hero-section"
-				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/about-hero.jpg)] bg-center bg-cover bg-no-repeat`}
+				backgroundClassName="bg-[url(/about-hero.jpg)]"
+				title="Professional Summary"
+				titleId="about-me-hero-title"
+				subtitle={summary}
+				subtitleId="about-me-hero-subtitle"
 			>
-				<h1
-					id="about-me-hero-title"
-					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
-				>
-					Professional Summary
-				</h1>
-				<p
-					id="about-me-hero-subtitle"
-					className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white"
-				>
-					Front End Software Developer with 7 years of experience
-					delivering high-performant, scalable, and user focused web applications. Proficient in cross platform mobile application development
-					using React Native and Expo
-				</p>
-				<button
+				<IconButton
 					id="aboutme-scroll-down-button"
-					type="button"
 					aria-label="Scroll down to next section of about me page"
-					aria-pressed={undefined}
 					onClick={handleScrollTo}
-					className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles}`}
-				>
-					<FaHandPointDown />
-				</button>
-			</section>
+					icon={<FaHandPointDown />}
+					iconOnly
+					className="animate-bounce"
+				/>
+			</PageHero>
 
 			<section
 				id="section-under-hero-technical-skills"
-				className="py-20 px-6 bg-white dark:bg-gray-900"
+				className={`${sectionStyles} bg-white dark:bg-slate-950`}
 			>
-				<p
-					id="about-me-hero-subtitle"
-					className="max-w-screen-xl ml-auto mr-auto mb-12 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin text-black dark:text-white text-center p-6"
-				>
-					Specialized in JavaScript, TypeScript, React.js, Next.js, for modern UI development. Experienced in cross platform mobile application development
-					using React Native and Expo. Passionate about clean code, accessibility, and building
-					intuitive user experiences that solve real business problems.
-				</p>
-				<div className="max-w-4xl mx-auto mb-12">
-					<h2
-						className={`${textSizesPrimary}`}
-						id="technical-skills-title"
+				<Reveal className={sectionInnerStyles}>
+					<p
+						id="about-me-summary-copy"
+						className={`${textSizesSecondary} mx-auto mb-12 max-w-4xl`}
 					>
+						Specialized in JavaScript, TypeScript, React.js, Next.js, for modern UI web development and
+						React Native and Expo in cross platform mobile application development.
+						Passionate about clean code, accessibility, and building intuitive user experiences that
+						solve real business problems.
+					</p>
+					<h2 className={`${textSizesPrimary}`} id="technical-skills-title">
 						Technical Skills
 					</h2>
-					<div>
-						<ul>{renderedSkillsMobile}</ul>
-					</div>
-				</div>
+					<ul className="mt-10 grid gap-4 md:grid-cols-2">{renderedSkillsMobile}</ul>
+				</Reveal>
 			</section>
 
 			<section
-				className="py-20 px-6 bg-gray-100 dark:bg-gray-950"
+				className={`${sectionStyles} bg-slate-50 dark:bg-slate-900`}
 				id="about-me-professional-experience"
 			>
-				<h2 id="work-history-title" className={textSizesPrimary}>
+				<h2 id="work-history-title" className={`${textSizesPrimary} mb-10`}>
 					Professional Experience
 				</h2>
-				<p
-					id="opentext-work-history-title"
-					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500"
-				>
-					Software Engineer
-				</p>
-				<p
-					id="opentext-work-history-title"
-					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500"
-				>
-					OpenText Core Insight - 2018 - 2025
-				</p>
-				<ul className="max-w-screen-xl ml-auto mr-auto list-disc w-60 sm:w-4/5">{renderedWorkHistory}</ul>
+				<div className={sectionInnerStyles}>{renderedWorkHistory}</div>
 			</section>
 
 			<section
-				className="py-20 px-6 bg-white dark:bg-gray-800"
-				id="about-me-professional-experience"
+				className={`${sectionStyles} bg-white dark:bg-slate-950`}
+				id="about-me-education"
 			>
-				<h2 id="work-history-title" className={textSizesPrimary}>
-					Education
-				</h2>
-				<p
-					id="opentext-work-history-title"
-					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl font-semibold dark:text-gray-500"
-				>
-					Turing School of Software & Design
-				</p>
-				<p
-					id="opentext-work-history-title"
-					className="text-center text-base sm:text-lg xl:text-1xl 2xl:text-2xl mb-5 font-semibold dark:text-gray-500"
-				>
-					Front End Engineering Certificate - 2017 - 2018
-				</p>
-				<p className={textSizesSecondary}>
-					Immersive training in JavaScript, responsive web design, client side architecture, and
-					modern front end development techniques.
-				</p>
+				<Reveal className={`${sectionInnerStyles} ${cardStyles}`}>
+					<h2 id="education-title" className={textSizesPrimary}>
+						Education
+					</h2>
+					<p
+						id="turing-school-title"
+						className="mt-8 text-center text-xl font-semibold text-slate-950 dark:text-white"
+					>
+						Turing School of Software & Design
+					</p>
+					<p
+						id="turing-certificate-date"
+						className="mb-5 text-center text-base font-semibold text-cyan-700 dark:text-cyan-300"
+					>
+						Front End Engineering Certificate - 2017 - 2018
+					</p>
+					<p className={`${textSizesSecondary} mx-auto max-w-4xl`}>
+						Immersive training in JavaScript, responsive web design, client side architecture, and
+						modern front end development techniques.
+					</p>
+				</Reveal>
 			</section>
 		</main>
 	)

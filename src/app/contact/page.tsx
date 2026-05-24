@@ -6,7 +6,13 @@ import DialogTitle from '@mui/material/DialogTitle'
 
 import {FaHandPointDown} from 'react-icons/fa6'
 import {FiSend} from 'react-icons/fi'
-import {btnColors, btnFlexStyles} from '../lib/utils'
+import {
+	cardStyles,
+	formFieldStyles,
+	sectionInnerStyles,
+	sectionStyles,
+	textSizesPrimary
+} from '../lib/utils'
 import {FaAsterisk} from 'react-icons/fa'
 import emailjs, {EmailJSResponseStatus} from '@emailjs/browser'
 import {z} from 'zod'
@@ -17,11 +23,11 @@ import {contactData} from '../lib/data'
 
 import {useState, useActionState, useRef} from 'react'
 import LoadingSpinner from '../ui/LoadingSpinner/LoadingSpinner'
+import IconButton from '../ui/Button/IconButton'
+import PageHero from '../ui/Hero/PageHero'
+import Reveal from '../ui/motion/Reveal'
 
-const btnSizes =
-	'rounded-full h-auto w-36 sm:w-38 md:w-40 lg:w-42 xl:w-48 2xl:w-52 p-2 lg:p-3 xl:p-4 2xl:p-5'
-const btnTextSizes = 'text-base sm:text-lg xl:text-1xl 2xl:text-2xl'
-const formLabelStyles = 'block mb-2 text-gray-500 text-base sm:text-lg xl:text-1xl 2xl:text-2xl'
+const formLabelStyles = 'mb-2 flex items-center text-base font-semibold text-slate-200 sm:text-lg'
 
 export type State = {
 	errors?: {
@@ -35,11 +41,11 @@ export type State = {
 const getIcon = (key: string) => {
 	switch (key) {
 		case 'Gmail':
-			return <SiGmail className="mr-2" />
+			return <SiGmail className="text-cyan-300" />
 		case 'LinkedIn':
-			return <FaLinkedin className="mr-2" />
+			return <FaLinkedin className="text-cyan-300" />
 		case 'Telephone':
-			return <BsFillTelephoneFill className="mr-2" />
+			return <BsFillTelephoneFill className="text-cyan-300" />
 		default:
 			break
 	}
@@ -214,73 +220,62 @@ export default function Contact() {
 	}
 
 	return (
-		<main className="h-auto bg-white text-gray-900 font-sans pt-20">
-			<section
+		<main className="h-auto bg-white text-gray-900 font-sans pt-20 dark:bg-slate-950">
+			<PageHero
 				id="contact-page-hero-section"
-				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/contact_hero_img.jpg)] bg-center bg-cover bg-no-repeat`}
+				backgroundClassName="bg-[url(/contact_hero_img.jpg)]"
+				title="Contact"
+				titleId="contact-page-hero-title"
+				subtitle="Let's connect"
+				subtitleId="contact-page-hero-subtitle"
 			>
-				<h1
-					id="contact-page-hero-title"
-					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
-				>
-					Contact
-				</h1>
-				<p
-					id="contact-page-hero-subtitle"
-					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
-				>
-					{`Let's connect`}
-				</p>
-				<button
+				<IconButton
 					id="contact-page-scroll-down-button"
-					type="button"
 					aria-label="Scroll down to next section"
-					aria-pressed={undefined}
 					onClick={handleScrollTo}
-					className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles}`}
-				>
-					<FaHandPointDown />
-				</button>
-			</section>
+					icon={<FaHandPointDown />}
+					iconOnly
+					className="animate-bounce"
+				/>
+			</PageHero>
 
 			<section
 				id="contact-page-contact-details"
-				className={`bg-gray-100 dark:bg-gray-800 h-auto pt-11 pb-11`}
+				className={`${sectionStyles} h-auto bg-slate-50 dark:bg-slate-900`}
 			>
-				<div className="flex flex-col p-8 max-w-screen-xl ml-auto mr-auto mb-10">
-					<h1 className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-10 text-black dark:text-white text-center">
+				<Reveal className={`${sectionInnerStyles} mb-14`}>
+					<h1 className={`${textSizesPrimary} mb-10`}>
 						Reach out to me directly
 					</h1>
-					<ul className="bg-gray-900 rounded-xl p-6 lg:flex">
+					<ul className="grid gap-4 rounded-3xl bg-slate-950 p-6 shadow-xl shadow-slate-950/20 lg:grid-cols-3">
 						{contactData.map(({label, text}, index) => {
 							return (
 								<li
 									key={index}
-									className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-white mb-3 sm:text-center lg:w-1/3"
+									className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-base text-white sm:text-lg"
 								>
-									<span className="flex items-center justify-center">
-										{getIcon(label)} <span className="text-gray-500 font-semibold">{label} </span>
+									<span className="mb-3 flex items-center justify-center gap-2">
+										{getIcon(label)} <span className="font-semibold text-slate-200">{label} </span>
 									</span>
-									<span className="block text-center">{text}</span>
+									<span className="block break-words text-center text-slate-300">{text}</span>
 								</li>
 							)
 						})}
 					</ul>
-				</div>
+				</Reveal>
 
-				<div className="pb-8 max-w-screen-xl ml-auto mr-auto">
-					<h1 className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-black dark:text-white text-center">
+				<Reveal className={sectionInnerStyles}>
+					<h1 className={`${textSizesPrimary} mb-8`}>
 						Send me a message:
 					</h1>
-					<div className="p-8">
-						<form action={formAction} className="bg-gray-900 rounded-xl">
-							<div className="p-8">
-								<div className="flex">
+					<div className={cardStyles}>
+						<form action={formAction} className="rounded-3xl bg-slate-950 p-6 sm:p-8">
+							<div className="space-y-8">
+								<div>
 									<label htmlFor="name" className={formLabelStyles} aria-required="true">
 										Name:
+										<FaAsterisk className="ml-2 text-xs text-red-400" />
 									</label>
-									<FaAsterisk className="text-red-500 text-xs ml-2" />
-								</div>
 								<input
 									type="text"
 									id="name"
@@ -289,17 +284,15 @@ export default function Contact() {
 									placeholder="John Doe..."
 									required
 									aria-required="true"
-									className="block w-full rounded-md h-10 p-3 outline-cyan-400"
+									className={formFieldStyles}
 								/>
 							</div>
 
-							<div className="p-8">
-								<div className="flex">
+								<div>
 									<label htmlFor="email" className={formLabelStyles} aria-required="true">
 										Email:
+										<FaAsterisk className="ml-2 text-xs text-red-400" />
 									</label>
-									<FaAsterisk className="text-red-500 text-xs ml-2" />
-								</div>
 								<input
 									type="text"
 									id="email"
@@ -308,17 +301,15 @@ export default function Contact() {
 									placeholder="jdoe@example.com..."
 									required
 									aria-required="true"
-									className="block w-full rounded-md h-10 p-3 outline-cyan-400"
+									className={formFieldStyles}
 								/>
 							</div>
 
-							<div className="p-8">
-								<div className="flex">
+								<div>
 									<label htmlFor="message" className={formLabelStyles} aria-required="true">
 										Message:
+										<FaAsterisk className="ml-2 text-xs text-red-400" />
 									</label>
-									<FaAsterisk className="text-red-500 text-xs ml-2" />
-								</div>
 								<textarea
 									id="message"
 									name="message"
@@ -326,33 +317,33 @@ export default function Contact() {
 									placeholder="Hello, I am John Doe..."
 									required
 									aria-required="true"
-									className="block w-full rounded-md p-3 outline-cyan-400"
+									className={`${formFieldStyles} min-h-40`}
 								/>
+							</div>
 							</div>
 
 							<div
 								id="customer-error"
 								aria-live="polite"
 								aria-atomic="true"
-								className="p-4 flex items-center justify-center flex-col"
+								className="flex flex-col items-center justify-center gap-3 p-4"
 							>
 								{renderedErrorMessage()}
 							</div>
 
-							<div className="flex items-center justify-center pb-10">
-								<button
+							<div className="flex items-center justify-center pb-2">
+								<IconButton
 									type="submit"
-									className={`${btnColors} ${btnFlexStyles} ${btnTextSizes} ${btnSizes}`}
+									icon={renderedSubmnitBtnIcons()}
 								>
 									Submit
-									{renderedSubmnitBtnIcons()}
-								</button>
+								</IconButton>
 							</div>
 						</form>
 					</div>
-				</div>
+				</Reveal>
 			</section>
-			<Dialog open={toggleDialog}>
+			<Dialog open={toggleDialog} PaperProps={{className: 'rounded-3xl bg-white dark:bg-slate-950'}}>
 				<DialogTitle color={dialogTextColor}>{dialogText}</DialogTitle>
 			</Dialog>
 		</main>

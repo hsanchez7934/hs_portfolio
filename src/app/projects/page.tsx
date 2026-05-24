@@ -1,11 +1,13 @@
 'use client'
 
-import {FaHandPointDown} from 'react-icons/fa6'
-import {btnColors, btnFlexStyles} from '../lib/utils'
-// import {textSizesPrimary, textSizesSecondary} from '../lib/utils'
+import {FaExternalLinkAlt, FaHandPointDown} from 'react-icons/fa'
+import {badgeStyles, cardStyles, sectionInnerStyles, sectionStyles, textSizesPrimary} from '../lib/utils'
 import {projects} from '../lib/data'
 import Image from 'next/image'
 import ImageCarousal from '../ui/ImageCarousal/ImageCarousal'
+import IconButton from '../ui/Button/IconButton'
+import PageHero from '../ui/Hero/PageHero'
+import Reveal from '../ui/motion/Reveal'
 
 import {SiTypescript} from 'react-icons/si'
 import {RiJavascriptFill} from 'react-icons/ri'
@@ -20,7 +22,7 @@ import {PiDotFill} from 'react-icons/pi'
 
 const getIcon = (key: string) => {
 	const styles = {}
-	const classes = 'text-white mr-3 text-xl'
+	const classes = 'text-cyan-600 dark:text-cyan-300 text-xl'
 
 	switch (key) {
 		case 'TypeScript':
@@ -66,70 +68,39 @@ export default function Projects() {
 					id={`project-section-${title}-${index}`}
 					className={`px-6 py-8 projectSection_${index}`}
 				>
-					<div className="max-w-7xl mx-auto bg-black rounded-xl">
-						<div key={title} id={title} className="w-full p-8">
+					<Reveal className={`${sectionInnerStyles} ${cardStyles}`}>
+						<div key={title} id={title} className="w-full">
 							<h2
-								className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-gray-300 text-center"
-								id="technical-skills-title"
+								className={`${textSizesPrimary} mb-5`}
+								id={`project-title-${index}`}
 							>
 								{title}
 							</h2>
 
-							<div className="text-center">
-								<a
+							<div className="mb-8 flex justify-center">
+								<IconButton
 									href={`${projectUrl}`}
-									className="hover:underline text-cyan-400"
 									aria-label={`Click link to visit the project, ${title}`}
+									icon={<FaExternalLinkAlt />}
 								>
 									Visit project here
-								</a>
+								</IconButton>
 							</div>
 
-							<div className="hidden lg:block lg:mb-8">
-								{links.map(({text, url}: {text: string; url: string}, index: number) => {
-									return (
-										<div key={index} className="text-center">
-											<a
-												className="hover:underline text-cyan-400"
-												href={url}
-												aria-label={`Click link to navigate away from website, ${text}`}
-											>
-												{text}
-											</a>
-										</div>
-									)
-								})}
-							</div>
-
-							<div className="hidden lg:block h-auto w-full">
+							<div className="mb-10 hidden h-auto w-full text-center lg:block">
 								<h3
-									className="text-white text-center"
+									className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400"
 								>
 									Built using the following technologies:
 								</h3>
-								<div>
+								<div className="flex flex-wrap justify-center gap-3">
 									{techStack.map((tech, index) => {
 										return (
 											<div
-												style={{
-													display: 'inline-block',
-													backgroundColor: 'gray',
-													margin: '10px',
-													padding: '8px 12px',
-													borderRadius: 12,
-													color: '#f5f5f5'
-												}}
+												className={badgeStyles}
 												key={index}
 											>
-												<div
-													style={{
-														display: 'flex',
-														alignItems: 'center',
-														justifyContent: 'center',
-														height: '100%',
-														width: '100%'
-													}}
-												>
+												<div className="flex h-full w-full items-center justify-center">
 													{getIcon(tech)}
 													<p>{tech}</p>
 												</div>
@@ -139,29 +110,29 @@ export default function Projects() {
 								</div>
 							</div>
 
-							<div className="lg:flex lg:mt-6">
-								<div className="h-auto w-full lg:w-1/2 p-6">
+							<div className="grid gap-10 lg:mt-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+								<div className="h-auto w-full">
 									{<ImageCarousal images={images} />}
-									<div className="hidden lg:block h-full w-full bg-black">
+									<div className="hidden h-full w-full overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-slate-950 lg:block">
 										<Image
 											src={mainProjectImg}
 											key={index}
 											width={500}
 											height={500}
 											alt="Image of project user interface"
-											className="mb-4 h-full w-full object-cover"
+											className="h-full w-full object-cover"
 										/>
 									</div>
 								</div>
-								<ul className="mb-12 lg:w-1/2">
+								<ul className="space-y-5">
 									{description.map(({text, label}, index) => {
 										return (
 											<li
 												key={index}
-												className="font-thin text-base sm:text-lg xl:text-1xl 2xl:text-2xl text-white mb-3 sm:text-center lg:text-left"
+												className="text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg"
 											>
 												<span
-													className="font-semibold text-gray-500 sm:block"
+													className="mb-1 block font-semibold text-slate-950 dark:text-white"
 												>
 													{label}:{' '}
 												</span>
@@ -172,34 +143,34 @@ export default function Projects() {
 								</ul>
 							</div>
 
-							<div className="block lg:hidden">
+							<div className="mt-10 block lg:hidden">
 								<h2
-									className="text-lg sm:text-1xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold mb-4 text-gray-300 text-center"
-									id="technical-skills-title"
+									className="mb-4 text-center text-xl font-semibold text-slate-950 dark:text-white"
+									id={`project-tech-stack-${index}`}
 								>
 									Tech Stack
 								</h2>
-								<div className="pb-5">
+								<ul className="flex flex-wrap justify-center gap-3 pb-5">
 									{techStack.map((stack: string, index) => {
 										return (
 											<li
 												key={index}
-												className="p-2 text-lg h-auto w-auto text-white flex items-center justify-center"
+												className={badgeStyles}
 											>
 												{getIcon(stack)}
 												<span>{stack}</span>
 											</li>
 										)
 									})}
-								</div>
-								<div>
+								</ul>
+								<div className="flex flex-wrap justify-center gap-3">
 									{links.map(({text, url}: {text: string; url: string}, index: number) => {
 										return (
 											<a
-												className="block text-center hover:underline mb-2 text-cyan-400"
+												className="rounded-full border border-slate-200 px-4 py-2 text-center text-sm font-semibold text-cyan-700 transition hover:border-cyan-400 hover:bg-cyan-50 dark:border-white/10 dark:text-cyan-300 dark:hover:bg-white/10"
 												href={url}
 												key={index}
-												araia-label={`Click link to navigate away from website, ${text}`}
+												aria-label={`Click link to navigate away from website, ${text}`}
 											>
 												{text}
 											</a>
@@ -208,44 +179,34 @@ export default function Projects() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</Reveal>
 				</section>
 			)
 		})
 	}
 
 	return (
-		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20">
-			<section
+		<main className="min-h-screen bg-white text-gray-900 font-sans pt-20 dark:bg-slate-950">
+			<PageHero
 				id="projects-page-hero-section"
-				className={`bg-gray-100 dark:bg-gray-800 h-dvh sm:h-svh flex flex-col items-center justify-center bg-[url(/projects_hero.jpg)] bg-center bg-cover bg-no-repeat`}
+				backgroundClassName="bg-[url(/projects_hero.jpg)]"
+				title="Projects"
+				titleId="projects-page-hero-title"
+				subtitle="A collection of projects that I have built leveraging my skills as a front end developer"
+				subtitleId="projects-page-hero-subtitle"
 			>
-				<h1
-					id="projects-page-hero-title"
-					className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl dark:text-gray-200 font-bold mb-4 text-center text-white`}
-				>
-					Projects
-				</h1>
-				<p
-					id="projects-page-hero-subtitle"
-					className={`'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-thin dark:text-white text-center' w-52 sm:w-3/5 md:w-1/2 mb-12 text-center text-white`}
-				>
-					A collection of projects that I have built leveraging my skills as a front end developer
-				</p>
-				<button
+				<IconButton
 					id="projects-page-scroll-down-button"
-					type="button"
 					aria-label="Scroll down to next section"
-					aria-pressed={undefined}
 					onClick={handleScrollTo}
-					className={`${btnColors} h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 rounded-full text-2xl sm:text-3xl md:text-4xl ${btnFlexStyles}`}
-				>
-					<FaHandPointDown />
-				</button>
-			</section>
+					icon={<FaHandPointDown />}
+					iconOnly
+					className="animate-bounce"
+				/>
+			</PageHero>
 			<section
 				id="projects-page-projects-list-section"
-				className="h-auto py-11 bg-gray-100 dark:bg-gray-800"
+				className={`${sectionStyles} h-auto bg-slate-50 dark:bg-slate-900`}
 				aria-label="Projects list section"
 			>
 				{renderedProjectCards()}

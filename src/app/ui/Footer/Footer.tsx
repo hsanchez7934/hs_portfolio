@@ -1,5 +1,6 @@
 'use client'
 
+import {motion} from 'framer-motion'
 import {FaLinkedin, FaSquareGithub} from 'react-icons/fa6'
 
 const getYear = () => {
@@ -8,24 +9,35 @@ const getYear = () => {
 
 export default function Footer() {
 	return (
-		<footer className="p-10 min-h-36 md:h-96 bg-gray-200 w-full flex flex-col items-center justify-center dark:bg-black">
+		<footer className="flex min-h-56 w-full flex-col items-center justify-center bg-slate-100 p-10 dark:bg-slate-950">
 			<div
 				id="footer-social-section"
 				aria-label="Footer social media links section"
-				className="w-4/5 p-8 flex justify-center items-center"
+				className="flex w-4/5 items-center justify-center gap-6 p-8"
 			>
-				<a href="https://www.linkedin.com/in/hector-a-sanchez/" aria-label='Click this link to navigate to linkedin profile'>
-					<FaLinkedin className='text-2xl mr-6' />
-				</a>
+				<motion.a
+					href="https://www.linkedin.com/in/hector-a-sanchez/"
+					aria-label="Click this link to navigate to linkedin profile"
+					className="rounded-full p-3 text-3xl text-slate-700 transition hover:bg-white hover:text-cyan-700 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-cyan-300"
+					whileHover={{scale: 1.12, y: -2}}
+					whileTap={{scale: 0.96}}
+				>
+					<FaLinkedin />
+				</motion.a>
 
-				<a href="https://github.com/hsanchez7934" aria-label='Click this link to navigate to github profile'>
-					<FaSquareGithub className='text-2xl ml-6' />
-				</a>
+				<motion.a
+					href="https://github.com/hsanchez7934"
+					aria-label="Click this link to navigate to github profile"
+					className="rounded-full p-3 text-3xl text-slate-700 transition hover:bg-white hover:text-cyan-700 dark:text-slate-200 dark:hover:bg-white/10 dark:hover:text-cyan-300"
+					whileHover={{scale: 1.12, y: -2}}
+					whileTap={{scale: 0.96}}
+				>
+					<FaSquareGithub />
+				</motion.a>
 			</div>
 
 			<div
-				className="w-4/5 p-8"
-				style={{borderTop: '1px solid darkgray'}}
+				className="w-4/5 border-t border-slate-300 p-8 text-slate-600 dark:border-white/10 dark:text-slate-300"
 				id="footer-copyright-section"
 			>
 				<p className="text-center text-xs">Created by Hector Sanchez</p>
