@@ -22,7 +22,7 @@ import {PiDotFill} from 'react-icons/pi'
 
 const getIcon = (key: string) => {
 	const styles = {}
-	const classes = 'text-cyan-600 dark:text-cyan-300 text-xl'
+	const classes = 'text-cyan-600 dark:text-cyan-300 text-xl mr-2'
 
 	switch (key) {
 		case 'TypeScript':
