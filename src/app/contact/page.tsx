@@ -247,17 +247,17 @@ export default function Contact() {
 					<h1 className={`${textSizesPrimary} mb-10`}>
 						Reach out to me directly
 					</h1>
-					<ul className="grid gap-4 rounded-3xl bg-slate-950 p-6 shadow-xl shadow-slate-950/20 lg:grid-cols-3">
+					<ul className="grid gap-4 rounded-3xl bg-gray-50 dark:bg-slate-950 p-6 shadow-xl shadow-slate-950/20 lg:grid-cols-3">
 						{contactData.map(({label, text}, index) => {
 							return (
 								<li
 									key={index}
-									className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center text-base text-white sm:text-lg"
+									className="rounded-2xl border border-white/10 bg-gray-100 dark:bg-slate-950/5 p-5 text-center text-base text-white sm:text-lg"
 								>
 									<span className="mb-3 flex items-center justify-center gap-2">
-										{getIcon(label)} <span className="font-semibold text-slate-200">{label} </span>
+										{getIcon(label)} <span className="font-semibold text-slate-800 dark:text-white">{label} </span>
 									</span>
-									<span className="block break-words text-center text-slate-300">{text}</span>
+									<span className="block break-words text-center text-slate-800 dark:text-white">{text}</span>
 								</li>
 							)
 						})}
@@ -269,7 +269,7 @@ export default function Contact() {
 						Send me a message:
 					</h1>
 					<div className={cardStyles}>
-						<form action={formAction} className="rounded-3xl bg-slate-950 p-6 sm:p-8">
+						<form action={formAction} className="rounded-3xl bg-gray-50 dark:bg-slate-950 p-6 sm:p-8">
 							<div className="space-y-8">
 								<div>
 									<label htmlFor="name" className={formLabelStyles} aria-required="true">
