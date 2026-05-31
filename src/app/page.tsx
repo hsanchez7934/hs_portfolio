@@ -62,7 +62,7 @@ export default function Home() {
 
 			<section id="home-page-section-under-hero" className={`${sectionStyles} bg-white dark:bg-slate-950`}>
 				<Reveal className={`${sectionInnerStyles} ${cardStyles} text-center`}>
-					<h2 className={`${textSizesPrimary}`} id="user-summary-title">
+					<h2 className={`${textSizesPrimary} mb-4`} id="user-summary-title">
 						Welcome
 					</h2>
 					<p className={`${textSizesSecondary} mx-auto max-w-4xl`} id="user-summary">
@@ -130,7 +130,7 @@ export default function Home() {
 						I am currently open to new opportunities and freelance projects.
 					</p>
 					<div className="mt-10 flex items-center justify-center">
-						<IconButton href={'/contact'} icon={<FaHandshake />}>
+						<IconButton href={'/about#about-me-contact-details'} icon={<FaHandshake />}>
 							Contact
 						</IconButton>
 					</div>

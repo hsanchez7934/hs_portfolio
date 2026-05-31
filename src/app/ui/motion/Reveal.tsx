@@ -2,6 +2,7 @@
 
 import {motion} from 'framer-motion'
 import type {ElementType, ReactNode} from 'react'
+import {useMemo} from 'react'
 
 type Props = {
 	as?: ElementType
@@ -12,7 +13,7 @@ type Props = {
 }
 
 export default function Reveal({as = 'div', children, className, delay = 0, id}: Props) {
-	const MotionTag = motion.create(as)
+	const MotionTag = useMemo(() => motion.create(as), [as])
 
 	return (
 		<MotionTag

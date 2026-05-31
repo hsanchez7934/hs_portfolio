@@ -18,8 +18,7 @@ import {Typography} from '@mui/material'
 const links: {text: string; href: string}[] = [
 	{text: 'Home', href: '/'},
 	{text: 'About', href: '/about'},
-	{text: 'Projects', href: '/projects'},
-	{text: 'Contact', href: '/contact'}
+	{text: 'Projects', href: '/projects'}
 ]
 
 export default function NavBar() {

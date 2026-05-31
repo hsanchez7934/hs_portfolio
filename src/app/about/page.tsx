@@ -1,6 +1,9 @@
 'use client'
 
 import {FaHandPointDown} from 'react-icons/fa6'
+import {SiGmail} from 'react-icons/si'
+import {FaLinkedin} from 'react-icons/fa6'
+import {BsFillTelephoneFill} from 'react-icons/bs'
 import {
 	badgeStyles,
 	cardStyles,
@@ -9,7 +12,7 @@ import {
 	textSizesPrimary,
 	textSizesSecondary
 } from '../lib/utils'
-import {technicalSkills, WorkHistory, workHistory} from '../lib/data'
+import {contactData, technicalSkills, WorkHistory, workHistory} from '../lib/data'
 import IconButton from '../ui/Button/IconButton'
 import PageHero from '../ui/Hero/PageHero'
 import Reveal from '../ui/motion/Reveal'
@@ -35,6 +38,30 @@ const getYearsOfExperience = (startDate: Date) => {
 	}
 
 	return yearsOfExperience
+}
+
+const getContactIcon = (key: string) => {
+	switch (key) {
+		case 'Gmail':
+			return <SiGmail className="text-cyan-600 dark:text-cyan-300" />
+		case 'LinkedIn':
+			return <FaLinkedin className="text-cyan-600 dark:text-cyan-300" />
+		case 'Telephone':
+			return <BsFillTelephoneFill className="text-cyan-600 dark:text-cyan-300" />
+		default:
+			return null
+	}
+}
+
+const getContactHref = (label: string, text: string) => {
+	switch (label) {
+		case 'Gmail':
+			return `mailto:${text}`
+		case 'Telephone':
+			return `tel:${text.replace(/[^\d+]/g, '')}`
+		default:
+			return text
+	}
 }
 
 const renderedSkillsMobile = technicalSkills.map(
@@ -165,6 +192,39 @@ export default function About() {
 						Immersive training in JavaScript, responsive web design, client side architecture, and
 						modern front end development techniques.
 					</p>
+				</Reveal>
+			</section>
+
+			<section
+				className={`${sectionStyles} bg-slate-50 dark:bg-slate-900`}
+				id="about-me-contact-details"
+			>
+				<Reveal className={sectionInnerStyles}>
+					<h2 id="contact-details-title" className={`${textSizesPrimary} mb-10`}>
+						Contact Details
+					</h2>
+					<ul className="grid gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-slate-950 lg:grid-cols-3">
+						{contactData.map(({label, text}, index) => {
+							return (
+								<li
+									key={index}
+									className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-center text-base sm:text-lg dark:border-white/10 dark:bg-white/5"
+								>
+									<span className="mb-3 flex items-center justify-center gap-2">
+										{getContactIcon(label)}
+										<span className="font-semibold text-slate-800 dark:text-white">{label}</span>
+									</span>
+									<a
+										href={getContactHref(label, text)}
+										className="block break-words text-center text-slate-700 transition hover:text-cyan-700 hover:underline dark:text-slate-200 dark:hover:text-cyan-300"
+										aria-label={`Contact me through ${label}`}
+									>
+										{text}
+									</a>
+								</li>
+							)
+						})}
+					</ul>
 				</Reveal>
 			</section>
 		</main>
