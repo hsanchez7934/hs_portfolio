@@ -58,8 +58,6 @@ const handleScrollTo = () => {
 export default function Projects() {
 	const renderedProjectCards = () => {
 		return projects.map((project, index) => {
-			// const sectionColor =
-			// 	index % 0 === 2 ? 'bg-gray-100 dark:bg-gray-800' : 'bg-white dark:bg-gray-900'
 			const {title, description, images, links, techStack, projectUrl, mainProjectImg} = project
 
 			return (
@@ -129,12 +127,12 @@ export default function Projects() {
 										return (
 											<li
 												key={index}
-												className="text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg"
+												className="text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg"
 											>
 												<span
 													className="mb-1 block font-semibold text-slate-950 dark:text-white"
 												>
-													{label}:{' '}
+													{label}
 												</span>
 												{text}
 											</li>

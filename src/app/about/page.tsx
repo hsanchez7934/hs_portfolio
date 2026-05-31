@@ -69,7 +69,7 @@ const renderedSkillsMobile = technicalSkills.map(
 		return (
 			<li
 				key={index}
-				className={`${badgeStyles} flex-col items-start text-left sm:items-center sm:text-center`}
+				className={`${badgeStyles} flex-col items-start text-left sm:items-center sm:text-center text-base sm:text-lg xl:text-xl`}
 			>
 				<span className="font-semibold text-slate-950 dark:text-white">{label}</span>
 				{value}
@@ -84,7 +84,7 @@ const renderedWorkHistory = workHistory.map((item: WorkHistory) => {
 			return (
 				<li
 					key={index}
-					className="text-base leading-7 text-slate-700 dark:text-slate-200 sm:text-lg"
+					className="leading-7 text-slate-700 dark:text-slate-200 text-base sm:text-lg xl:text-xl 2xl:text-2xl"
 				>
 					{responsibility}
 				</li>
@@ -95,7 +95,7 @@ const renderedWorkHistory = workHistory.map((item: WorkHistory) => {
 		<Reveal key={item.title + item.company + item.date} className={`${cardStyles} mb-8`}>
 			<p
 				id={item.title + item.company + item.date + '-work-history-title'}
-				className="text-center text-xl font-semibold text-slate-950 dark:text-white"
+				className="text-center text-base sm:text-lg xl:text-xl 2xl:text-2xl font-semibold text-slate-950 dark:text-white"
 			>
 				{item.title}
 			</p>

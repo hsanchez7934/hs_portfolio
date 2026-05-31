@@ -34,37 +34,40 @@ export type WorkHistory = {
 	responsibilities: string[]
 }
 
-export const workHistory: WorkHistory[] = [{
-	title: 'Front End Engineer',
-	company: 'OpenText Core Insight',
-	date: '2018 - 2025',
-	responsibilities: [
-	'Managed the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, TypeScript, and React.',
-	'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
-	'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
-	'Decreased UI bug count by 35% via test automation and structured QA handoffs.',
-	'Implemented and standardized use of a component based system to accelerate team velocity and maintain consistency.',
-	'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
-	'Wrote clean, maintainable code following industry best practices and internal standards.'
+export const workHistory: WorkHistory[] = [
+	{
+		title: 'Front End Engineer',
+		company: 'OpenText Core Insight',
+		date: '2018 - 2025',
+		responsibilities: [
+			'Managed the front end development of a major enterprise application used by thousands of clients, delivering performant and scalable features with JavaScript, jQuery, TypeScript, and React.',
+			'Partnered with product managers and UX designers to translate business requirements into clean, responsive, and accessible UI components.',
+			'Owned UI development lifecycle: feature planning, development, testing, and post release optimization.',
+			'Decreased UI bug count by 35% via test automation and structured QA handoffs.',
+			'Implemented and standardized use of a component based system to accelerate team velocity and maintain consistency.',
+			'Participated in Agile ceremonies, code reviews, and cross-functional sprint planning with backend, QA, and product teams.',
+			'Wrote clean, maintainable code following industry best practices and internal standards.'
+		]
+	},
+	{
+		title: 'Senior Front End Engineer',
+		company: 'Microstar Logistics',
+		date: '2025 - Present',
+		responsibilities: [
+			'Managing, building, and improving the user interfaces for several mission-critical applications.',
+			'Applying modern front-end best practices in React and Redux, ensuring maintainability, performance, and seamless usability.',
+			'Designed and implemented a mobile-first Progressive Web App (Next.js + Redux Toolkit) used by field operators to report structured operational data in real time.',
+			'Designed scalable application architecture with long-term maintainability in mind (feature-based folder structure, reusable component library, state persistence).',
+			'Collaborated closely with backend engineers to define API contracts, versioning strategies, and region-aware endpoints.',
+			'Led technical direction for baseline tooling: Redux setup, persistence layer, linting, code formatting, CI alignment.',
+			'Authored structured Jira epics and QA matrices to ensure high-quality delivery across distributed stakeholders.',
+			'Conducted peer mentorship on React best practices, state normalization, and performance optimization.',
+			'Built and maintained full-stack CRUD workflows supporting booking lifecycle management and operational data capture.',
+			'Enabled real-time operational visibility for mission-critical logistics workflows.',
+			'Improved development velocity through standardized tooling and code quality enforcement.'
+		]
+	}
 ]
-}, {
-	title: 'Senior Front End Engineer',
-	company: 'Microstar Logistics',
-	date: '2025 - Present',
-	responsibilities: [
-		'Managing, building, and improving the user interfaces for several mission-critical applications.',
-		'Applying modern front-end best practices in React and Redux, ensuring maintainability, performance, and seamless usability.',
-		'Designed and implemented a mobile-first Progressive Web App (Next.js + Redux Toolkit) used by field operators to report structured operational data in real time.',
-		'Designed scalable application architecture with long-term maintainability in mind (feature-based folder structure, reusable component library, state persistence).',
-		'Collaborated closely with backend engineers to define API contracts, versioning strategies, and region-aware endpoints.',
-		'Led technical direction for baseline tooling: Redux setup, persistence layer, linting, code formatting, CI alignment.',
-		'Authored structured Jira epics and QA matrices to ensure high-quality delivery across distributed stakeholders.',
-		'Conducted peer mentorship on React best practices, state normalization, and performance optimization.',
-		'Built and maintained full-stack CRUD workflows supporting booking lifecycle management and operational data capture.',
-		'Enabled real-time operational visibility for mission-critical logistics workflows.',
-		'Improved development velocity through standardized tooling and code quality enforcement.'
-	]
-}]
 
 export const projects = [
 	{
@@ -152,6 +155,35 @@ export const projects = [
 		],
 		images: ['/ui_components_proj_img1.png'],
 		mainProjectImg: '/ui_components_proj_img2.png'
+	},
+	{
+		title: 'UI Components Showcase',
+		projectUrl: 'https://ui-showcase-three.vercel.app/',
+		description: [
+			{
+				label: 'Project Overview',
+				text: 'Developed a UI components showcase using React, Next.js, Framer Motion, and TailwindCSS, designed to showcase a collection of UI components and their usage in a real-world application.'
+			},
+			{
+				label: 'Enterprise Grade Animations',
+				text: 'Utilized Framer Motion to create enterprise-grade animations that are performant and accessible.'
+			},
+			{
+				label: 'Responsive Design',
+				text: 'Designed the UI components to be responsive and accessible on all devices.'
+			},
+			{label: 'UI/UX', text: 'Designed the UI components to be user-friendly and intuitive.'}
+		],
+		techStack: ['TypeScript', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+		links: [
+			{text: 'GitHub repo', url: 'https://github.com/hsanchez7934/ui-showcase'},
+			{
+				text: 'Hosted on Vercel',
+				url: 'https://vercel.com'
+			}
+		],
+		images: ['/ui_showcase_img_1.png'],
+		mainProjectImg: '/ui_showcase_img_1.png'
 	}
 ]
 
