@@ -117,8 +117,8 @@ export const projects = [
 				url: 'https://www.thecocktaildb.com/'
 			}
 		],
-		images: ['/ck_img_1.png', '/ck_img_2.png', '/ck_img_3.png', '/ck_img_4.png', '/ck_img_5.png'],
-		mainProjectImg: '/ck_img_5.png'
+		images: ['/hs-ck-img1.png', '/hs-ck-img2.png', '/hs-ck-img3.png', '/hs-ck-img5.png', '/hs-ck-img6.png'],
+		mainProjectImg: '/hs-ck-img1.png'
 	},
 	{
 		title: 'UI Components Library',
