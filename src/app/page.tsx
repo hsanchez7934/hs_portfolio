@@ -112,7 +112,7 @@ export default function Home() {
 						</div>
 						<div className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-100 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-slate-950">
 							<Image
-								src={'/ck_img_1.png'}
+								src={'/hs-ck-img3.png'}
 								alt="Cocktail Explorer project screenshot"
 								width={500}
 								height={500}
